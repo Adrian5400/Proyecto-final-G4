@@ -9,3 +9,5 @@ const App = () => {
 }
 
 export default App;
+
+//IGNORAD ESTO, AHORA TIRAMOS CON RESOURCES/JS/PAGES/PROFILE/WELCOME
