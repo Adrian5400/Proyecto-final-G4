@@ -10,6 +10,6 @@ class HerramientaController extends Controller
 {
     public function index()
     {
-        return Herramienta::select('id', 'nombre')->get();
+        return Herramienta::select('id', 'nombre', 'desc')->get();
     }
 }
