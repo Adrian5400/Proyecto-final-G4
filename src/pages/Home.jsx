@@ -1,5 +1,8 @@
 import React from "react";
 import { Navbar, Nav } from 'react-bootstrap';
+import './css/home.css';
+
+
 function Home() {
   return (
 <div className="mx-auto contenedor container min-vh-100">
