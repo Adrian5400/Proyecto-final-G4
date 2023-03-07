@@ -13,14 +13,14 @@ function Home() {
       <div className="container">
         <div className="row">
           <div className="col-md-12 mt-4 text-center">
-            <h1 className="mt-3" style={{ color: "var(--color2)" }}>
-              Lorem ipsum dolor sit amet consectetur Illo!
+            <h1 className="mt-3" style={{ color: "var(--color3)" }}>
+              CoRAzon Abierto
             </h1>
             <p style={{ color: "var(--color4)" }}>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
-              perferendis laborum repellendus suscipit culpa ad aliquid expedita
-              explicabo ipsam vero, libero voluptates in quibusdam architecto
-              odio adipisci corrupti? Eum, sequi?
+              Bienvenido a la aplicación rompecorazones.
+            </p>
+             <p style={{ color: "var(--color4)" }}>
+              Utiliza la barra de navegación para acceder a la base de datos de herramientas o para registrar tus credenciales y acceder a la zona de preparación de operaciones.
             </p>
             <div className="col-md-12 mt-4">
               <img src="http://via.placeholder.com/800x685" alt="imagen" />
@@ -30,15 +30,6 @@ function Home() {
       </div>
    
 
-      <footer className="mt-5" style={{ backgroundColor: "var(--color1)", maxWidth: "100vw", overflowX: "hidden" }}>
-  <div className="row">
-    <div className="col-md-12 text-center">
-      <p className="mt-3" style={{ color: "var(--color5)" }}>
-        Lorem ipsum dolor sit amet consectetur Illo!
-      </p>
-    </div>
-  </div>
-</footer>
 </div>
   );
 }

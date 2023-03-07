@@ -1,6 +1,6 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect} from 'react';
 import { Contexto } from './../App';
 
 export default function BarraNav() {
@@ -10,8 +10,10 @@ export default function BarraNav() {
   const goLogin = () => navigate("/login", { replace: true });
   const goHome = () => navigate("/", { replace: true });
 
+
+
   return (
-    <Navbar style={{ backgroundColor: "var(--color1)", position: "fixed", top: 0, width: "100%" }}>
+    <Navbar style={{ backgroundColor: "var(--color1)", position: "fixed", top: '0', width: "100%" }}>
       <Navbar.Brand className="col-sm-6 col-md-8 col-lg-9" >
         <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: "3em" }} onClick={() => goHome()}>Inicio</span>
       </Navbar.Brand>

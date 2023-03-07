@@ -5,6 +5,8 @@ import Register from './pages/register'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BarraNav from './components/BarraNav';
+import DasFooter from './components/DasFooter';
+
 export const Contexto = createContext();
 function App() {
 
@@ -23,7 +25,8 @@ function App() {
           <Route path='/' element={<Home />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
-        </Routes>
+          </Routes>
+          <DasFooter />
       </Router>
       </div>
       </Contexto.Provider>
