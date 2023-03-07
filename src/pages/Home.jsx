@@ -1,9 +1,13 @@
 import React from "react";
+import { useContext } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import './css/home.css';
+import { Contexto } from './../App';
 
 
 function Home() {
+  const { usuarioPagina } = useContext(Contexto);
+
   return (
 <div className="mx-auto contenedor container min-vh-100">
       <div className="container">

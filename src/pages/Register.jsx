@@ -5,6 +5,7 @@ import { TextField, Button, Card, CardContent, Grid } from '@mui/material';
 import { Alert } from '@mui/material';
 import { useState } from 'react'
 import './css/Register.css';
+import { Contexto } from './../App';
 
 
 const theme= createTheme({
@@ -25,6 +26,9 @@ function Register() {
     password: '',
     confirmPassword: ''
   });
+
+ const { usuarioPagina, setUsuarioPagina } = useContext(Contexto);
+
 
   const [error, setError] = useState('');
 

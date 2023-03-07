@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField, Button, Card, CardContent, Grid } from '@mui/material';
 import { useState } from 'react'
 import './css/Login.css';
+import { Contexto } from './../App';
 
 
 const theme= createTheme({
@@ -22,6 +23,8 @@ function Login() {
     email: '',
     password: ''
   });
+
+ const { usuarioPagina, setUsuarioPagina } = useContext(Contexto);
 
 
   const handleSubmit = (event) => {

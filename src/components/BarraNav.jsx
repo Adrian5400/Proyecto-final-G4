@@ -1,9 +1,11 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { Contexto } from './../App';
 
 export default function BarraNav() {
   const navigate = useNavigate();
-
+ const { usuarioPagina } = useContext(Contexto);
   const goRegister = () => navigate("/register", { replace: true });
   const goLogin = () => navigate("/login", { replace: true });
   const goHome = () => navigate("/", { replace: true });
