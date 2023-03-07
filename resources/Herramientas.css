@@ -1,0 +1,23 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.imagen {
+  width: 150px;
+  height: 150px;
+}
+
+.cuerpo{
+  width: 350px;
+}
+
+.contenedor{
+  background-color: #4c595b;
+}
+
+body{
+  background-color: #8f9ea9
+}
