@@ -1,7 +1,9 @@
 import BarraNav from "./BarraNav";
 import React from "react";
 import Carta from "./CardTemporal";
-
+import "./css/pasos.css";
+import { Card } from "react-bootstrap";
+import Inicio from "./InicioPasos";
 
 function Pasos() {
     return (
@@ -9,15 +11,9 @@ function Pasos() {
             <BarraNav />
             <div className="container">
                 <div className="row">
-                    <div className="col-md-12 mt-4 text-center">
-                        <div className="row">
-
-                        </div>
-
-
+                    <Inicio></Inicio>
                     </div>
                 </div>
-            </div>
 
             <footer className="mt-5" style={{ backgroundColor: "var(--color1)", maxWidth: "100vw", overflowX: "hidden" }}>
                 <div className="row">
@@ -29,6 +25,8 @@ function Pasos() {
                 </div>
             </footer>
         </div>
+    
+
     );
 }
 

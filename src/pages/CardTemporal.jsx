@@ -5,7 +5,8 @@ import Card from 'react-bootstrap/Card';
 
 function Carta() {
     return (
-<Card style={{ width: '10rem' }}>
+
+<Card>
 <Card.Img variant="top" src="http://via.placeholder.com/100x100" />
 <Card.Body>
     <Card.Title>Card Title</Card.Title>
@@ -16,6 +17,7 @@ function Carta() {
     <Button variant="primary">Go somewhere</Button>
 </Card.Body>
 </Card>
+
     );
 }
 
