@@ -11,4 +11,12 @@ html, body, #root {
     min-height: 100%;
 }
 
+.MuiStepLabel-label, .MuiStepLabel-active {
+    color: white;
+  }
 
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  

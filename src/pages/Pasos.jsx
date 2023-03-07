@@ -6,7 +6,6 @@ import Inicio from "./InicioPasos";
 function Pasos() {
     return (
         <div className="mx-auto contenedor">
-            <BarraNav />
             <div className="container">
                 <div className="row">
                     <Inicio></Inicio>

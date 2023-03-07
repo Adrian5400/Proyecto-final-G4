@@ -6,7 +6,7 @@ import BarraNav from "./BarraNav";
 function Home() {
   return (
     <div className="mx-auto contenedor min-vh-100">
-      <BarraNav />  
+      <BarraNav />
       <div className="container">
         <div className="row">
           <div className="col-md-12 mt-4 text-center">
