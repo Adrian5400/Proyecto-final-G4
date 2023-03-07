@@ -1,13 +1,11 @@
 import BarraNav from "./BarraNav";
 import React from "react";
-import Carta from "./CardTemporal";
 import "./css/pasos.css";
-import { Card } from "react-bootstrap";
 import Inicio from "./InicioPasos";
 
 function Pasos() {
     return (
-        <div className="mx-auto contenedor min-vh-100">
+        <div className="mx-auto contenedor">
             <BarraNav />
             <div className="container">
                 <div className="row">

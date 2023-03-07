@@ -13,7 +13,7 @@ function Inicio() {
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--color2)' }}>
+    <div style={{ backgroundColor: 'var(--color2)'}}>
       <h1 style={{ color: 'var(--color5)' }}>Inicio</h1>
       {!mostrarPasos && (
         <Button

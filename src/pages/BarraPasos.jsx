@@ -28,22 +28,73 @@ function getDiv(step) {
   switch (step) {
     case 0:
       return (
-        <div className="div1" style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)' }}>
-          <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)'}}>
+         <div className='row'>
+           <div className='col-md-6'>
+              <img src= "https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+             </div>
+           <div className='col-md-6'>
+            <h1>Paso 1</h1>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+         </div>
         </div>
-      );
+        <div className='row mt-2'>
+        <div className='col-md-6'>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+         </div>
+           <div className='col-md-6'>
+              <img src= "https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+             </div>
+           
+        </div>
+        </div>
+       );
     case 1:
       return (
-        <div className="div2" style={{ backgroundColor: 'var(--color4)', color: 'var(--color1)' }}>
-          <Typography variant="h6">Paso 2</Typography>
+        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)'}}>
+         <div className='row'>
+           <div className='col-md-6'>
+              <img src= "https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+             </div>
+           <div className='col-md-6'>
+            <h1>Paso 2</h1>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+         </div>
         </div>
-      );
+        <div className='row mt-2'>
+        <div className='col-md-6'>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+         </div>
+           <div className='col-md-6'>
+              <img src= "https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+             </div>
+           
+        </div>
+        </div>
+        );
     case 2:
       return (
-        <div className="div3" style={{ backgroundColor: 'var(--color2)', color: 'var(--color5)' }}>
-          <Typography variant="h6">Paso 3</Typography>
+        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)'}}>
+         <div className='row'>
+           <div className='col-md-6'>
+              <img src= "https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+             </div>
+           <div className='col-md-6'>
+            <h1>Paso 3</h1>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+         </div>
         </div>
-      );
+        <div className='row mt-2'>
+        <div className='col-md-6'>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+         </div>
+           <div className='col-md-6'>
+              <img src= "https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+             </div>
+           
+        </div>
+        </div>
+        );
     default:
       return null;
   }
@@ -62,9 +113,9 @@ function ZonaPasos() {
   }
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'flex-start', width: '100%' }}>
+    <Box sx={{ display: 'flex', alignItems: 'flex-start', width: '100%', marginTop: '2em'}}>
       <Box sx={{ width: '50%', mr: 2 }}>
-        <Stepper pasoActual={pasoActual} orientation="vertical">
+        <Stepper activeStep={pasoActual} orientation="vertical">
           {pasos.map((label, index) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
