@@ -5,6 +5,8 @@ import { TextField, Button, Card, CardContent, Grid } from '@mui/material';
 import { useState } from 'react'
 import './css/Login.css';
 import { Contexto } from './../App';
+import { useNavigate } from "react-router-dom";
+
 
 
 const theme= createTheme({
@@ -24,7 +26,7 @@ function Login() {
     password: ''
   });
   const [error, setError] = useState('');
-  
+  const navigate = useNavigate();
 
   function goHome() {
     navigate("/", { replace: true }); 
@@ -33,26 +35,32 @@ function Login() {
 
  const { usuarioPagina, setUsuarioPagina } = useContext(Contexto);
 
- async function fetchData() {
-  const response = await fetch('http://127.0.0.1:8000/api/users');
+
+const handleSubmit = async (event) => {
+  event.preventDefault();
+  const { email, password } = state;
+
+  const response = await fetch('http://127.0.0.1:8000/api/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+
   const data = await response.json();
-  return data;
-  
-}
 
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = fetchData();
-    const { email, password } = state;
-    const user = data.find(user => user.email === email && user.password === password);
-    if (user) {
-      goHome();
-    } else {
-      setError('¡No existe un usuario con ese email y contraseña!');
-      document.getElementById('error').style.display = 'block';
-    }
+  if (response.ok) {
+    // Si la respuesta es 200 OK, el usuario inició sesión correctamente
+    setUsuarioPagina(data);
+    goHome();
+  } else {
+    // Si la respuesta es un error, muestra el mensaje de error devuelto por la API
+    setError(data.error);
+    document.getElementById('error').style.display = 'block';
   }
+};
+
 
   const handleInputChange = (event) => {
     const target = event.target;
