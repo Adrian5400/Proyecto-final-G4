@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 import BarraNav from './components/BarraNav';
 import DasFooter from './components/DasFooter';
+import Equipo from './pages/Equipo';
 
 
 
@@ -39,6 +40,7 @@ const RutaProtegida = ({children}) => {
             <Route path='/register' element={<Register />} />
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
+            <Route path="/equipo" element={<Equipo />} />
         
           </Routes>
           <DasFooter />
