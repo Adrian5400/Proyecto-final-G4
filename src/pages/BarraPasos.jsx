@@ -191,6 +191,7 @@ function getDiv(step) {
         </div>
       );
 
+      
       case 5:
         return (
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
