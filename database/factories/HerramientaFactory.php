@@ -23,7 +23,9 @@ class HerramientaFactory extends Factory
     {
         return [
             'nombre' => $this->faker->word,
-            'desc' => $this->faker->sentence
+            'desc' => $this->faker->sentence,
+            'image' => 'herramienta.jpg'
+
         ];
     }
 }
