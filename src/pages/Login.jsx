@@ -1,5 +1,5 @@
 import React, { Component, useContext } from 'react';
-
+import { Alert } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField, Button, Card, CardContent, Grid } from '@mui/material';
 import { useState } from 'react'
@@ -23,14 +23,35 @@ function Login() {
     email: '',
     password: ''
   });
+  const [error, setError] = useState('');
+  
+
+  function goHome() {
+    navigate("/", { replace: true }); 
+  }
+
 
  const { usuarioPagina, setUsuarioPagina } = useContext(Contexto);
+
+ async function fetchData() {
+  const response = await fetch('http://127.0.0.1:8000/api/users');
+  const data = await response.json();
+  return data;
+  
+}
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Email:', state.email);
-    console.log('Password:', state.password);
+    const data = fetchData();
+    const { email, password } = state;
+    const user = data.find(user => user.email === email && user.password === password);
+    if (user) {
+      goHome();
+    } else {
+      setError('¡No existe un usuario con ese email y contraseña!');
+      document.getElementById('error').style.display = 'block';
+    }
   }
 
   const handleInputChange = (event) => {
@@ -47,7 +68,7 @@ function Login() {
   return (
     <ThemeProvider theme={theme}>
        <Grid id="contenedor" sx={{ display:'flex', justifyContent: 'center'}}>
-          <Card sx={{ backgroundColor: 'grisClaro.color', width:"90%"}}>
+          <Card sx={{ backgroundColor: 'grisClaro.color',width:"45%"}}>
             <CardContent sx={{ borderColor: 'blanco.color', borderWidth: '1px', borderStyle: 'solid' }}>
               <form onSubmit={handleSubmit}>
                 <label>Email</label>
@@ -76,6 +97,7 @@ function Login() {
                   onChange={handleInputChange}
                   sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
                 />
+                <Alert id="error" severity="error" sx={{ display: 'none', marginBottom: '20px'}}>{error}</Alert>
                 <Button
                   type="submit"
                   variant="contained"

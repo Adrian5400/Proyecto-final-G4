@@ -6,6 +6,7 @@ import { Alert } from '@mui/material';
 import { useState } from 'react'
 import './css/Register.css';
 import { Contexto } from './../App';
+import { useNavigate } from 'react-router-dom';
 
 
 const theme= createTheme({
@@ -19,6 +20,12 @@ const theme= createTheme({
 });
 
 function Register() {
+
+  const navigate = useNavigate();
+
+function goHome() {
+  navigate("/", { replace: true }); 
+}
 
   const [state, setState] = useState({
     usuario: '',
@@ -39,17 +46,40 @@ function Register() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Email:', state.email);
-    console.log('Password:', state.password);
-    console.log('Email:', state.usuario);
-    console.log('Password:', state.confirmPassword);
-
-
+    // console.log('Email:', state.email);
+    // console.log('Password:', state.password);
+    // console.log('Usuario:', state.usuario);
+    // console.log('Password:', state.confirmPassword);
 
     if (!compararPasswords()) { 
         setError('¡No coinciden las contraseñas!');
         document.getElementById('error').style.display = 'block';
+    }else{
+      sendData();
     }
+    
+  }
+
+  async function sendData() {
+    const response = await fetch('http://127.0.0.1:8000/api/users', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({
+        "name": state.usuario,
+        "email": state.email,
+        "password": state.confirmPassword
+      })
+    });
+    
+    console.log(response);
+    if (response.ok) {
+      goHome();
+    } else {
+      alert("Esto avisa que hay un error con las credenciales, p. ej. que ya existe el usuario.");
+    }
+
   }
 
   const handleInputChange = (event) => {

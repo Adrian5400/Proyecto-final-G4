@@ -13,8 +13,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
-div{
-   height: 100%;
+img {
+    width: 70%;
+    height: auto;
+    
 }
 
 html, body{
