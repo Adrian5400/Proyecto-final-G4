@@ -9,6 +9,7 @@ export default function BarraNav() {
   const goRegister = () => navigate("/register", { replace: true });
   const goLogin = () => navigate("/login", { replace: true });
   const goHome = () => navigate("/", { replace: true });
+  const goPasos = () => navigate("/pasos", { replace: true });
 
 
 
@@ -20,6 +21,7 @@ export default function BarraNav() {
       <Nav className="ml-auto col-sm-6 col-md-4 col-lg-3 d-flex justify-content-evenly">
         <Nav.Link className="mr-3" style={{ color: "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => goRegister()}>Registrarse</Nav.Link>
         <Nav.Link style={{ color: "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => goLogin()}>Login</Nav.Link>
+                <Nav.Link style={{ color: "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => goPasos()}>Pasos</Nav.Link>
       </Nav>
     </Navbar>
   );
