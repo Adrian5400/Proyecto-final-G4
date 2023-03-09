@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import './css/home.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import { Contexto } from './../App';
 import augusto from './../img/augusto.png';
