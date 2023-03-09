@@ -26,3 +26,5 @@ Route::get('/herramientas', 'App\Http\Controllers\HerramientaController@index');
 Route::get('/users', 'App\Http\Controllers\UserController@index');
 Route::post('/users', 'App\Http\Controllers\UserController@store');
 Route::post('/login', 'App\Http\Controllers\UserController@login');
+Route::delete('/users/{email}', 'App\Http\Controllers\UserController@delete');
+

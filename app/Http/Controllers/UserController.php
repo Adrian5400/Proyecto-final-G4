@@ -45,5 +45,15 @@ public function login(Request $request)
     }
 }
 
+public function delete($email){
+    $user = User::where('email', $email)->first();
+    if ($user) {
+        $user->delete();
+        return response()->json(['message' => 'Usuario eliminado correctamente'], 200);
+    } else {
+        return response()->json(['message' => 'No se encontró el usuario'], 404);
+    }
+}
+
 
 }
