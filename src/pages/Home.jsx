@@ -16,7 +16,7 @@ function Home() {
             <div className="col-sm-12 col-lg-6 col-md-6 d-flex flex-column justify-content-center mt-sm-5 ">
               
                 <h1 className="col-lg-12 pb-md-3 mt-sm-5" style={{ color: "var(--color5)" }}>
-                  CoRAzon Abierto
+                  CoRAzon Virtual
                 </h1>
                 <div className="pt-md-3">
                   <p className="col-lg-12" style={{ color: "var(--color5)" }}>

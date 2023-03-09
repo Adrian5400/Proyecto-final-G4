@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Login from './pages/Login'
 import Register from './pages/register'
 import Pasos from './pages/Pasos'
+import Error from './pages/Error'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
@@ -44,6 +45,7 @@ const RutaAdmin = ({children}) => {
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
             <Route path="/equipo" element={<Equipo />} />
+            <Route path="/*" element={<Error />} />
           </Routes>
           <DasFooter />
       </Router>
