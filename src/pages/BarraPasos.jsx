@@ -10,7 +10,7 @@ import "./css/pasos.css";
 
 function getPasos() {
   return ['Primer paso de la operación', 'Segundo paso de la operación', 'Tercer paso de la operación', 
-  'Cuarto paso de la operacion', 'Quinto paso de la operación', 'Sexto paso de la operación', 'Séptimo paso de la operación'];
+  'Cuarto paso de la operacion', 'Quinto paso de la operación', 'Sexto paso de la operación', 'Séptimo paso de la operación', 'Octavo paso de la operación'];
 }
 
 function getPasoContenido(step) {
@@ -29,6 +29,8 @@ function getPasoContenido(step) {
       return "jiji cinco";
     case 6:
       return "jiji seis";
+    case 7:
+      return "jiji siete";
   }
 }
 
@@ -36,7 +38,7 @@ function getDiv(step) {
   switch (step) {
     case 0:
       return (
-        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+        <div className='div3' style={{  backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
           <div className='row'>
             <div className='col-md-6'>
               <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -47,7 +49,7 @@ function getDiv(step) {
             </div>
           </div>
           <div className='row mt-4'>
-            <div className='col-md-6'>
+            <div className='col-md-6 p-2'>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
             </div>
             <div className='col-md-6'>
@@ -63,11 +65,11 @@ function getDiv(step) {
             </div>
           </div>
         </div>
-      );
+      )
 
     case 1:
       return (
-        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+        <div className='div3' style={{  backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
           <div className='row'>
             <div className='col-md-6'>
               <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -78,7 +80,7 @@ function getDiv(step) {
             </div>
           </div>
           <div className='row mt-4'>
-            <div className='col-md-6'>
+            <div className='col-md-6 p-2'>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
             </div>
             <div className='col-md-6'>
@@ -99,7 +101,7 @@ function getDiv(step) {
 
     case 2:
       return (
-        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+        <div className='div3' style={{  backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
           <div className='row'>
             <div className='col-md-6'>
               <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -110,7 +112,7 @@ function getDiv(step) {
             </div>
           </div>
           <div className='row mt-4'>
-            <div className='col-md-6'>
+            <div className='col-md-6 p-2'>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
             </div>
             <div className='col-md-6'>
@@ -131,7 +133,7 @@ function getDiv(step) {
 
     case 3:
       return (
-        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+        <div className='div3' style={{  backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
           <div className='row'>
             <div className='col-md-6'>
               <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -142,7 +144,7 @@ function getDiv(step) {
             </div>
           </div>
           <div className='row mt-4'>
-            <div className='col-md-6'>
+          <div className='col-md-6 p-2'>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
             </div>
             <div className='col-md-6'>
@@ -162,7 +164,7 @@ function getDiv(step) {
       );
     case 4:
       return (
-        <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+        <div className='div3' style={{  backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
           <div className='row'>
             <div className='col-md-6'>
               <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -173,7 +175,7 @@ function getDiv(step) {
             </div>
           </div>
           <div className='row mt-4'>
-            <div className='col-md-6'>
+          <div className='col-md-6 p-2'>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
             </div>
             <div className='col-md-6'>
@@ -194,7 +196,7 @@ function getDiv(step) {
       
       case 5:
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+          <div className='div3' style={{ backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
                 <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -205,7 +207,7 @@ function getDiv(step) {
               </div>
             </div>
             <div className='row mt-4'>
-              <div className='col-md-6'>
+            <div className='col-md-6 p-2'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
               </div>
               <div className='col-md-6'>
@@ -225,7 +227,7 @@ function getDiv(step) {
 
         case 6:
           return (
-            <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+            <div className='div3' style={{  backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
               <div className='row'>
                 <div className='col-md-6'>
                   <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
@@ -236,7 +238,38 @@ function getDiv(step) {
                 </div>
               </div>
               <div className='row mt-4'>
+              <div className='col-md-6 p-2'>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+                </div>
                 <div className='col-md-6'>
+                  <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+                </div>
+              </div>
+              <div className='row mt-4'>
+                <div className='col-md-6'>
+                  <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+                </div>
+                <div className='col-md-6'>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+                </div>
+              </div>
+            </div>
+          );
+
+          case 7:
+          return (
+            <div className='div3' style={{ backgroundColor: 'var(--color1)', color: 'var(--color5)', padding: '20px' }}>
+              <div className='row'>
+                <div className='col-md-6'>
+                  <img src="https://i.ibb.co/0hY1Z1T/1.png" alt="1" border="0" />
+                </div>
+                <div className='col-md-6'>
+                  <h1>Paso 8</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
+                </div>
+              </div>
+              <div className='row mt-4'>
+              <div className='col-md-6 p-2'>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti fugiat neque unde ut similique placeat ipsam quo, dolore consequatur eligendi, in nobis maiores nulla id laudantium quos inventore doloremque nisi.</p>
                 </div>
                 <div className='col-md-6'>

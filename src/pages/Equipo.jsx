@@ -32,7 +32,7 @@ const equipo = [
 const Equipo = () => {
   return (
     <div className="mx-auto contenedor container min-vh-100 mt-5 pt-4">
-    <h1 className="pt-5" style={{textAlign: 'center'}}>Equipo</h1>
+    <h1 className="pt-5" style={{textAlign: 'center', color: "var(--color5)"}}>Equipo</h1>
       <Container>
       <Row>
         {equipo.map((miembro) => (
@@ -47,14 +47,40 @@ const Equipo = () => {
           </Col>
         ))}
       </Row>
-      </Container>
+   
 
-    <Row>
-    
+    <Row style={{marginTop: '2rem'}}>
+          <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
+        <div className="row">
+            <div className="col-md-12 text-center">
+                <p className="mt-3" style={{ color: "var(--color5)" }}>
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum hic deleniti assumenda quod unde, asperiores tempore corrupti illum porro accusantium autem voluptas magni mollitia voluptatum voluptates minima non aspernatur. Asperiores!
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. In odio optio saepe at laborum labore placeat, possimus libero. Illum modi harum laborum, similique dolorum tenetur vel laboriosam vitae corporis ipsam?
+                </p>
+            </div>
+            </div>
+          </Container>
     </Row>
+
+    
+    <Row style={{marginTop: '3rem'}}>
+          <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
+        <div className="row">
+            <div className="col-md-12 text-center">
+                <p className="mt-3" style={{ color: "var(--color5)" }}>
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum hic deleniti assumenda quod unde, asperiores tempore corrupti illum porro accusantium autem voluptas magni mollitia voluptatum voluptates minima non aspernatur. Asperiores!
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. In odio optio saepe at laborum labore placeat, possimus libero. Illum modi harum laborum, similique dolorum tenetur vel laboriosam vitae corporis ipsam?
+                </p>
+            </div>
+            </div>
+          </Container>
+    </Row>
+
+    
 
       
 
+    </Container>
     </div>
 
 
