@@ -12,6 +12,7 @@ export default function BarraNav() {
   const goHome = () => navigate("/", { replace: true });
   const goPasos = () => navigate("/pasos", { replace: true });
   const goEquipo = () => navigate("/equipo", { replace: true });
+  const goUsuarios = () => navigate("/usuarios", { replace: true });
   const goLogout = () => {
     setUsuarioPagina({ email: '', loggedIn: false, admin: false });
     navigate('/', { replace: true });
@@ -25,7 +26,7 @@ export default function BarraNav() {
           <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goHome()}>Inicio</span>
           <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goEquipo()}>Equipo</span>
           <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goPasos()}>Pasos</span>
-          <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goEquipo()}>Herramientas</span>
+          <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goUsuarios()}>Listar Usuarios</span>
         </Navbar.Brand>
         <Nav className="ml-auto col-sm-10 col-md-4 col-lg-4 d-flex justify-content-evenly">
           <span className="hide-on-md" style={{ color: "var(--color5)", marginRight: "1em", paddingTop: "0.5em" }}>{usuarioPagina.email}</span>
