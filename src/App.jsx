@@ -21,12 +21,15 @@ function App() {
 const RutaProtegida = ({children}) => {
   const { loggedIn } = useContext(Contexto).usuarioPagina;
   return loggedIn ? children  : <Navigate to="/login" />;
-};
+  };
+  
+  
+const RutaAdmin = ({children}) => {
+  const { admin } = useContext(Contexto).admin;
+  return admin ? children  : <Navigate to="/login" />;
+  };
+  
 
-
-  
-  
-  
   return (
     <Contexto.Provider value={{
       usuarioPagina,
@@ -41,7 +44,6 @@ const RutaProtegida = ({children}) => {
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
             <Route path="/equipo" element={<Equipo />} />
-        
           </Routes>
           <DasFooter />
       </Router>
