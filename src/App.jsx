@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Login from './pages/Login'
 import Register from './pages/register'
 import Pasos from './pages/Pasos'
+import Error from './pages/Error'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
@@ -21,12 +22,15 @@ function App() {
 const RutaProtegida = ({children}) => {
   const { loggedIn } = useContext(Contexto).usuarioPagina;
   return loggedIn ? children  : <Navigate to="/login" />;
-};
+  };
+  
+  
+const RutaAdmin = ({children}) => {
+  const { admin } = useContext(Contexto).admin;
+  return admin ? children  : <Navigate to="/login" />;
+  };
+  
 
-
-  
-  
-  
   return (
     <Contexto.Provider value={{
       usuarioPagina,
@@ -41,7 +45,7 @@ const RutaProtegida = ({children}) => {
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
             <Route path="/equipo" element={<Equipo />} />
-        
+            <Route path="/*" element={<Error />} />
           </Routes>
           <DasFooter />
       </Router>
