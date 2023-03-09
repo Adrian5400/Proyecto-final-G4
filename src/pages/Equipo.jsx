@@ -4,34 +4,34 @@ import { Container, Row, Col, Card, Image } from "react-bootstrap";
 
 const equipo = [
   {
-    nombre: "Lorem",
-    foto: "https://via.placeholder.com/150",
+    nombre: "Juan I.",
+    foto: "https://www.comunidad.madrid/sites/default/files/styles/image_style_16_9/public/img/profesiones/shutterstock_1683869425.jpg?itok=RVoaQ40b",
     descripcion:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+      "Le gustan largos paseos por la playa. Muy largos."
   },
   {
-    nombre: "Lorem",
-    foto: "https://via.placeholder.com/150",
+    nombre: "Guillermo",
+    foto: "https://media.gq.com.mx/photos/619696149d62ea68964f25ba/16:9/w_2560%2Cc_limit/new-work-kolumne-business-karriere-ueberqualifiziert-aufm.jpg",
     descripcion:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+      "Primer campeón de España de tiro con arco a caballo."
   },
   {
-    nombre: "Lorem",
-    foto: "https://via.placeholder.com/150",
+    nombre: "Adrián",
+    foto: "https://us.123rf.com/450wm/gstockstudio/gstockstudio1602/gstockstudio160200008/51617762-ocupado-trabajando-j%C3%B3venes-gafas-que-desgastan-del-hombre-guapo-pensativo-que-trabaja-en-la.jpg",
     descripcion:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+      "Arquitecto del estadio de Maracaná."
   },
   {
-    nombre: "Lorem",
-    foto: "https://via.placeholder.com/150",
+    nombre: "Integrante 4",
+    foto: "https://www.euroresidentes.com/estilo-de-vida/sentir-bien/wp-content/uploads/sites/7/2016/05/evita-personas-toxicas-trabajo-euroresidentes.jpg",
     descripcion:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+      "Filósofo, guerrero, oficial y caballero."
   },
   {
     nombre: "ChatGPT",
     foto: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
     descripcion:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+      "Tu colega. Tu amigo. Tu compañero."
   }
 ];
 
@@ -45,9 +45,9 @@ const Equipo = () => {
           <Col key={miembro.nombre}>
             <Card className="my-3">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                <Image src={miembro.foto} roundedCircle className="mb-3" />
-                <Card.Title>{miembro.nombre}</Card.Title>
-                <Card.Text className="text-center">{miembro.descripcion}</Card.Text>
+                <Image src={miembro.foto} roundedCircle style={{height: "20vh", objectFit:"cover"}} className="mb-3" />
+                <Card.Title style={{color: "var(--color3)"}}>{miembro.nombre}</Card.Title>
+                <Card.Text className="text-center" style={{color: "var(--color3)"}}>{miembro.descripcion}</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -60,8 +60,7 @@ const Equipo = () => {
         <div className="row">
             <div className="col-md-12 text-center">
                 <p className="mt-3" style={{ color: "var(--color5)" }}>
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum hic deleniti assumenda quod unde, asperiores tempore corrupti illum porro accusantium autem voluptas magni mollitia voluptatum voluptates minima non aspernatur. Asperiores!
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. In odio optio saepe at laborum labore placeat, possimus libero. Illum modi harum laborum, similique dolorum tenetur vel laboriosam vitae corporis ipsam?
+                      ¡Conozca a nuestro equipo de cuatro programadores en formación! Somos apasionados por la codificación y siempre estamos ansiosos por aprender cosas nuevas. Juntos, estamos trabajando en la creación de una aplicación que creemos tiene un gran potencial, aunque es posible que no tenga un gran éxito. A pesar de esto, estamos decididos a utilizar este proyecto como una oportunidad para mejorar nuestras habilidades y adquirir una valiosa experiencia en equipo.
                 </p>
             </div>
             </div>
@@ -74,18 +73,14 @@ const Equipo = () => {
         <div className="row">
             <div className="col-md-12 text-center">
                 <p className="mt-3" style={{ color: "var(--color5)" }}>
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum hic deleniti assumenda quod unde, asperiores tempore corrupti illum porro accusantium autem voluptas magni mollitia voluptatum voluptates minima non aspernatur. Asperiores!
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. In odio optio saepe at laborum labore placeat, possimus libero. Illum modi harum laborum, similique dolorum tenetur vel laboriosam vitae corporis ipsam?
+Nuestro equipo está compuesto por individuos con antecedentes diversos y perspectivas únicas, lo que nos permite abordar los problemas desde diferentes ángulos y encontrar soluciones creativas. Creemos que la colaboración y la comunicación son esenciales para el éxito de cualquier proyecto, y nos aseguramos de mantener una comunicación constante entre nosotros para asegurarnos de que todos estamos en la misma página.
+
+
                 </p>
             </div>
             </div>
           </Container>
     </Row>
-
-    
-
-      
-
     </Container>
     </div>
 
