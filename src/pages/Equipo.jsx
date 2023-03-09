@@ -26,6 +26,12 @@ const equipo = [
     foto: "https://via.placeholder.com/150",
     descripcion:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
+  },
+  {
+    nombre: "ChatGPT",
+    foto: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+    descripcion:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod."
   }
 ];
 
@@ -36,7 +42,7 @@ const Equipo = () => {
       <Container>
       <Row>
         {equipo.map((miembro) => (
-          <Col sm={12} md={3} key={miembro.nombre}>
+          <Col key={miembro.nombre}>
             <Card className="my-3">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
                 <Image src={miembro.foto} roundedCircle className="mb-3" />
