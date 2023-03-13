@@ -32,21 +32,21 @@ class HerramientasTableSeeder extends Seeder
             'nombre' => 'Cateter pigtail',
             'desc' => 'Descripcion de la herramienta 3',
             'image' => 'imagen3.jpg',
-            'steps' => [3, 11, 13],
+            'steps' => implode(',', [3, 11, 13]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Sistema de radioscopia',
             'desc' => 'Descripcion de la herramienta 4',
             'image' => 'imagen4.jpg',
-            'steps' => [4, 14, 16],
+            'steps' => implode(',', [4, 14, 16]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Bisturí',
             'desc' => 'Descripcion de la herramienta 5',
             'image' => 'imagen5.jpg',
-            'steps' => [5, 8],
+            'steps' => implode(',', [5, 8]),
         ]);
 
         Herramienta::create([
@@ -67,28 +67,28 @@ class HerramientasTableSeeder extends Seeder
             'nombre' => 'Punto quirurjico',
             'desc' => 'Descripcion de la herramienta 8',
             'image' => 'imagen8.jpg',
-            'steps' => [6, 7, 17],
+            'steps' => implode(',', [6, 7, 17]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Introductor arterial 6F',
             'desc' => 'Descripcion de la herramienta 9',
             'image' => 'imagen9.jpg',
-            'steps' => [8, 12],
+            'steps' => implode(',' ,[8, 12]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Valvula',
             'desc' => 'Descripcion de la herramienta 10',
             'image' => 'imagen10.jpg',
-            'steps' => [13, 15, 17],
+            'steps' => implode(',', [13, 15, 17]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Guia teflonda recta 35cm',
             'desc' => 'Descripcion de la herramienta 11',
             'image' => 'imagen11.jpg',
-            'steps' => [9, 11],
+            'steps' => implode(',' , [9, 11]),
         ]);
 
         Herramienta::create([
@@ -109,21 +109,21 @@ class HerramientasTableSeeder extends Seeder
             'nombre' => 'Guia teflonda extrastiff',
             'desc' => 'Descripcion de la herramienta 14',
             'image' => 'imagen14.jpg',
-            'steps' => [11, 17],
+            'steps' => implode(',', [11, 17]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Introductor certitude',
             'desc' => 'Descripcion de la herramienta 15',
             'image' => 'imagen15.jpg',
-            'steps' => [12, 17],
+            'steps' => implode(',', [12, 17]),
         ]);
         
-        Herrramienta::create([
+        Herramienta::create([
             'nombre' => 'Cateter balon',
             'desc' => 'Descripcion de la herramienta 16',
             'image' => 'imagen16.jpg',
-            'steps' => [13, 15, 17],
+            'steps' => implode(',', [13, 15, 17]),
         ]);
 
 
