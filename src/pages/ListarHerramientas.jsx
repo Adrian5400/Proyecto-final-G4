@@ -34,7 +34,7 @@ function ListarHerramientas() {
     }, []);
 
 
-    const handleDeleteUser = async (id) => {
+    const handleDeleteHerramienta = async (id) => {
         const response = await fetch(`http://127.0.0.1:8000/api/herramientas/${id}`, {
           method: 'DELETE',
         });
@@ -70,7 +70,7 @@ function ListarHerramientas() {
                         <TableRow key={herramienta.id}>
                             <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{herramienta.nombre}</TableCell>
                             <TableCell sx={{ color: theme.palette.blanco.color, border: '1px solid white' }}>
-                                <Button variant="contained" color="error" onClick={() => handleDeleteUser(herramienta.id)}>Borrar</Button>
+                                <Button variant="contained" color="error" onClick={() => handleDeleteHerramienta(herramienta.id)}>Borrar</Button>
                             </TableCell>
                         </TableRow>
                         ))}

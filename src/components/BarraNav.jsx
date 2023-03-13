@@ -28,8 +28,8 @@ export default function BarraNav() {
           <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goHome()}>Inicio</span>
           <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goEquipo()}>Equipo</span>
           <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goPasos()}>Pasos</span>
-          <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goUsuarios()}>Listar Usuarios</span>
-          <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goHerramientas()}>Listar Herramientas</span>
+          <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goUsuarios()}>Usuarios</span>
+          <span style={{ color: "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => goHerramientas()}>Herramientas</span>
         </Navbar.Brand>
         <Nav className="ml-auto col-sm-10 col-md-4 col-lg-4 d-flex justify-content-evenly">
           <span className="hide-on-md" style={{ color: "var(--color5)", marginRight: "1em", paddingTop: "0.5em" }}>{usuarioPagina.email}</span>
