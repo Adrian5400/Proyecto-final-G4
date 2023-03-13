@@ -52,7 +52,12 @@ const handleSubmit = async (event) => {
 
   if (response.ok) {
     // Si la respuesta es 200 OK, el usuario inició sesión correctamente
-    setUsuarioPagina(previous => ({...previous, email, loggedIn: true, admin: previous.admin}));
+
+    if(email === 'test@example.com') {
+      setUsuarioPagina(previous => ({...previous, email, loggedIn: true, admin: true}));
+    } else{
+      setUsuarioPagina(previous => ({...previous, email, loggedIn: true, admin: false}));
+    }
     goHome();
   } else {
     // Si la respuesta es un error, muestra el mensaje de error devuelto por la API
