@@ -51,7 +51,7 @@ const RutaAdmin = ({children}) => {
             <Route path="/equipo" element={<Equipo />} />
 
             <Route path="/usuarios" element={<RutaAdmin><ListarUsuarios /></RutaAdmin>} />
-            <Route path="/herramientas" element={<ListarHerramientas />} />
+            <Route path="/herramientas" element={<RutaAdmin><ListarHerramientas /></RutaAdmin>} />
 
             <Route path="/*" element={<Error />} />
           </Routes>
