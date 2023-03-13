@@ -37,13 +37,13 @@ const equipo = [
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container min-vh-100 mt-5 pt-4">
-    <h1 className="pt-5" style={{textAlign: 'center', color: "var(--color5)"}}>Equipo</h1>
-      <Container>
+    <div className="mx-auto contenedor container min-vh-100 mt-5 pt-4" style={{ overflow: 'hidden' }}>
+    <h1 className="pt-5 mb-5 pb-5" style={{textAlign: 'center', color: "var(--color5)", marginTop: "40vh"}}>Equipo</h1>
+      <Container style={{marginTop: "10vh"}}>
       <Row>
         {equipo.map((miembro) => (
           <Col key={miembro.nombre}>
-            <Card className="my-3">
+            <Card className="my-3 col-xs-12">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
                 <Image src={miembro.foto} roundedCircle style={{height: "20vh", objectFit:"cover"}} className="mb-3" />
                 <Card.Title style={{color: "var(--color3)"}}>{miembro.nombre}</Card.Title>
