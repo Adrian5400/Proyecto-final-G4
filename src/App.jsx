@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from 'react'
+import { useState, createContext, useContext, useEffect } from 'react'
 import Home from './pages/Home';
 import Login from './pages/Login'
 import Register from './pages/register'
@@ -27,10 +27,12 @@ const RutaProtegida = ({children}) => {
   
   
 const RutaAdmin = ({children}) => {
-  const { admin } = useContext(Contexto).admin;
-  return admin ? children  : <Navigate to="/login" />;
+  const { admin } = useContext(Contexto).usuarioPagina;
+  return admin ? children  : <Navigate to="/404" />;
   };
   
+
+
 
   return (
     <Contexto.Provider value={{
@@ -46,7 +48,7 @@ const RutaAdmin = ({children}) => {
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
             <Route path="/equipo" element={<Equipo />} />
-            <Route path="/usuarios" element={<ListarUsuarios />} />
+            <Route path="/usuarios" element={<RutaAdmin><ListarUsuarios /></RutaAdmin>} />
             <Route path="/*" element={<Error />} />
           </Routes>
           <DasFooter />
