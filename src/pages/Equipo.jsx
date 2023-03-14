@@ -5,25 +5,25 @@ import { Container, Row, Col, Card, Image } from "react-bootstrap";
 const equipo = [
   {
     nombre: "Juan I.",
-    foto: "https://www.comunidad.madrid/sites/default/files/styles/image_style_16_9/public/img/profesiones/shutterstock_1683869425.jpg?itok=RVoaQ40b",
+    foto: "https://www.usnews.com/object/image/00000143-de1e-d45e-a37b-ffff416f0000/FE_DA_111219_Kim_Jong_Il_2.jpg?update-time=&size=responsiveFlow640",
     descripcion:
-      "Le gustan largos paseos por la playa. Muy largos."
+      "Le gustan largos paseos por la playa. Misántropo."
   },
   {
     nombre: "Guillermo",
-    foto: "https://media.gq.com.mx/photos/619696149d62ea68964f25ba/16:9/w_2560%2Cc_limit/new-work-kolumne-business-karriere-ueberqualifiziert-aufm.jpg",
+    foto: "https://i.kym-cdn.com/photos/images/newsfeed/001/548/116/85d.jpg",
     descripcion:
       "Primer campeón de España de tiro con arco a caballo."
   },
   {
     nombre: "Adrián",
-    foto: "https://us.123rf.com/450wm/gstockstudio/gstockstudio1602/gstockstudio160200008/51617762-ocupado-trabajando-j%C3%B3venes-gafas-que-desgastan-del-hombre-guapo-pensativo-que-trabaja-en-la.jpg",
+    foto: "https://elitesportsny.com/wp-content/uploads/2022/11/USATSI_15781196-scaled.jpg",
     descripcion:
       "Arquitecto del estadio de Maracaná."
   },
   {
     nombre: "Integrante 4",
-    foto: "https://www.euroresidentes.com/estilo-de-vida/sentir-bien/wp-content/uploads/sites/7/2016/05/evita-personas-toxicas-trabajo-euroresidentes.jpg",
+    foto: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/94907b77-b2d8-49b7-b288-44472c12db95/ddcsjf6-d7f2f555-0949-4ef5-869f-2dc8b54a2344.jpg/v1/fill/w_1024,h_1536,q_75,strp/the_trainer_and_their_vaporeon_by_naitsabes89_ddcsjf6-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk0OTA3Yjc3LWIyZDgtNDliNy1iMjg4LTQ0NDcyYzEyZGI5NVwvZGRjc2pmNi1kN2YyZjU1NS0wOTQ5LTRlZjUtODY5Zi0yZGM4YjU0YTIzNDQuanBnIiwiaGVpZ2h0IjoiPD0xNTM2Iiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvOTQ5MDdiNzctYjJkOC00OWI3LWIyODgtNDQ0NzJjMTJkYjk1XC9uYWl0c2FiZXM4OS00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.tHAtSRm7mjnP4z1FFme3H0b4Coy0AX_hM4DsdShN-aM",
     descripcion:
       "Filósofo, guerrero, oficial y caballero."
   },
@@ -37,8 +37,8 @@ const equipo = [
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container min-vh-100 mt-5 pt-4" style={{ overflow: 'hidden' }}>
-    <h1 className="pt-5 mb-5 pb-5" style={{textAlign: 'center', color: "var(--color5)", marginTop: "40vh"}}>Equipo</h1>
+    <div className="mx-auto contenedor container min-vh-70 mt-5 pt-4" >
+    <h1 className="pt-5 mb-5 pb-5" style={{textAlign: 'center', color: "var(--color5)"}}>Equipo</h1>
       <Container style={{marginTop: "10vh"}}>
       <Row>
         {equipo.map((miembro) => (
@@ -58,7 +58,7 @@ const Equipo = () => {
     <Row style={{marginTop: '2rem'}}>
           <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
         <div className="row">
-            <div className="col-md-12 text-center">
+            <div className="col-sm-12 text-center">
                 <p className="mt-3" style={{ color: "var(--color5)" }}>
                       ¡Conozca a nuestro equipo de cuatro programadores en formación! Somos apasionados por la codificación y siempre estamos ansiosos por aprender cosas nuevas. Juntos, estamos trabajando en la creación de una aplicación que creemos tiene un gran potencial, aunque es posible que no tenga un gran éxito. A pesar de esto, estamos decididos a utilizar este proyecto como una oportunidad para mejorar nuestras habilidades y adquirir una valiosa experiencia en equipo.
                 </p>
@@ -71,7 +71,7 @@ const Equipo = () => {
     <Row style={{marginTop: '3rem'}}>
           <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
         <div className="row">
-            <div className="col-md-12 text-center">
+            <div className="col-sm-12 text-center">
                 <p className="mt-3" style={{ color: "var(--color5)" }}>
 Nuestro equipo está compuesto por individuos con antecedentes diversos y perspectivas únicas, lo que nos permite abordar los problemas desde diferentes ángulos y encontrar soluciones creativas. Creemos que la colaboración y la comunicación son esenciales para el éxito de cualquier proyecto, y nos aseguramos de mantener una comunicación constante entre nosotros para asegurarnos de que todos estamos en la misma página.
 
