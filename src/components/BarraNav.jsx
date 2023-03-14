@@ -8,7 +8,7 @@ import './css/navegacion.css';
 export default function BarraNav() {
   const navigate = useNavigate();
   const { usuarioPagina, setUsuarioPagina } = useContext(Contexto);
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState('inicio');
   const goRegister = () => navigate("/register", { replace: true });
   const goLogin = () => navigate("/login", { replace: true });
   const goHome = () => navigate("/", { replace: true });
