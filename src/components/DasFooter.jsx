@@ -6,7 +6,7 @@ export default function DasFooter() {
     
   
 return(
-    <footer className="mt-5" style={{ backgroundColor: "var(--color1)", maxWidth: "100vw", overflowX: "hidden", position: "fixed", bottom: "0", width: "100vw" }}>
+    <footer className="mt-5" style={{ backgroundColor: "var(--color1)", maxWidth: "100vw", overflowX: "hidden", position: "fixed", bottom: "0", width: "100vw", padding: 'auto' }}>
         <div className="row">
             <div className="col-md-12 text-center">
                 <p className="mt-3" style={{ color: "var(--color5)" }}>

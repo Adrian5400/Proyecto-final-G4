@@ -4,7 +4,7 @@ import Inicio from "./../components/InicioPasos";
 
 function Pasos() {
     return (
-        <div className="mx-auto contenedor">
+        <div className="mx-auto contenedor" style={{height: '90vh', margin: '0 0 2em 0'}}>
             <div className="container">
                 <div className="row">
                     <Inicio></Inicio>

@@ -37,7 +37,7 @@ const equipo = [
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container min-vh-70 mt-5 pt-4" >
+    <div className="mx-auto contenedor container min-vh-70 pt-4" >
     <h1 className="pt-5 mb-5 pb-5" style={{textAlign: 'center', color: "var(--color5)"}}>Equipo</h1>
       <Container style={{marginTop: "10vh"}}>
       <Row>
@@ -69,10 +69,11 @@ const Equipo = () => {
 
     
     <Row style={{marginTop: '3rem'}}>
-          <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
+          <Container style={{
+            backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
         <div className="row">
             <div className="col-sm-12 text-center">
-                <p className="mt-3" style={{ color: "var(--color5)" }}>
+                <p className="mt-3 mb-5" style={{ color: "var(--color5)" }}>
 Nuestro equipo está compuesto por individuos con antecedentes diversos y perspectivas únicas, lo que nos permite abordar los problemas desde diferentes ángulos y encontrar soluciones creativas. Creemos que la colaboración y la comunicación son esenciales para el éxito de cualquier proyecto, y nos aseguramos de mantener una comunicación constante entre nosotros para asegurarnos de que todos estamos en la misma página.
 
 

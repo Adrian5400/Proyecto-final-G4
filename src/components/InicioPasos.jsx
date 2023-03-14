@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import ZonaPasos from '../pages/BarraPasos';
+import ZonaPasos from './BarraPasos';
+export const ContextoHerramientas = createContext();
 
 function Inicio() {
   const [mostrarPasos, setMostrarPasos] = useState(false);
@@ -10,6 +11,7 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
   const handleSiguienteClick = () => {
     setMostrarPasos(true);
   };
+ 
 
   useEffect(() => {
     async function getHerramientas() {
@@ -21,49 +23,6 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
   }, []);
 
 
-
-  // const tarjetas = [
-  //   {
-  //     titulo: 'Herramienta 1',
-  //     descripcion: 'Descripción de la tarjeta 1',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 2',
-  //     descripcion: 'Descripción de la tarjeta 2',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 3',
-  //     descripcion: 'Descripción de la tarjeta 3',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 4',
-  //     descripcion: 'Descripción de la tarjeta 4',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 5',
-  //     descripcion: 'Descripción de la tarjeta 5',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 6',
-  //     descripcion: 'Descripción de la tarjeta 6',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 7',
-  //     descripcion: 'Descripción de la tarjeta 7',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  //   {
-  //     titulo: 'Herramienta 8',
-  //     descripcion: 'Descripción de la tarjeta 8',
-  //     imagen: 'https://via.placeholder.com/200',
-  //   },
-  // ];
 
   function Tarjeta(props) {
     const { nombre, desc, image_url, steps  } = props;
@@ -102,7 +61,10 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
 
 
   return (
-    <div style={{ backgroundColor: 'var(--color2)' }}>
+        <ContextoHerramientas.Provider value={{
+      tarjetas
+    }}>
+    <div style={{ backgroundColor: 'var(--color2)', height: '85vh', overflowY: 'scroll' }} >
       {!mostrarPasos && (
         <div>
           <h1 style={{ color: 'var(--color5)', textAlign: 'center', marginTop: '3rem' }}>¿Dispones de estas herramientas a mano?</h1>
@@ -121,7 +83,8 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
         </div>
       )}
       {mostrarPasos && <ZonaPasos />}
-    </div>
+      </div>
+      </ContextoHerramientas.Provider>
   );
 }
 
