@@ -17,7 +17,8 @@ class HerramientaController extends Controller
                 'id' => $herramienta->id,
                 'nombre' => $herramienta->nombre,
                 'desc' => $herramienta->desc,
-                'image_url' => asset('storage/' . $herramienta->image)
+                'image_url' => asset('storage/' . $herramienta->image),
+                'steps' => $herramienta->steps,
             ];
         });
 
