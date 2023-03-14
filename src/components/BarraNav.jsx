@@ -50,8 +50,13 @@ if(usuarioPagina.admin){
           <span style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
           <span style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
           <span style={{ color: activeLink === 'pasos' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('pasos'); goPasos()}}>Pasos</span>
-      </Navbar.Brand>
-      </Navbar>
+        </Navbar.Brand>
+          <Nav className="ml-auto col-sm-10 col-md-4 col-lg-4 d-flex justify-content-evenly">
+        <span className="hide-on-md" style={{ color: "var(--color5)", marginRight: "1em", paddingTop: "0.5em" }}>{usuarioPagina.email}</span>
+        <Nav.Link style={{ color: "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => goLogout()}>Logout</Nav.Link>      
+      </Nav>
+    </Navbar>
+     
 )
 
   }else {
