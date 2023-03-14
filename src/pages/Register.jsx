@@ -113,8 +113,9 @@ function goHome() {
                   required
                   value={state.usuario}
                   onChange={handleInputChange}
-                  sx={{ backgroundColor: 'blanco.color',marginBottom: '20px' }}
+                  sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
                 />
+                
                 <label>Email</label>
                 <TextField
                   id="email"

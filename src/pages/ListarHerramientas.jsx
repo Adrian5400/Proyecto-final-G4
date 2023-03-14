@@ -5,6 +5,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow,  Butt
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import { Alert } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
 const theme= createTheme({
     palette:{
@@ -49,6 +50,16 @@ function ListarHerramientas() {
     
         fetchHerramientas();
     };
+    const navigate = useNavigate();
+
+    const handleCreateHerramienta = () => {
+        navigate("/crearHerramienta", { replace: true }); 
+    };
+
+   
+
+    
+    
 
 
     return (
@@ -57,6 +68,9 @@ function ListarHerramientas() {
             <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
                 <div>
                 <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}>Se ha borrado la herramienta con exito</Alert>
+                    <Grid container justifyContent="center" sx={{ marginBottom: '20px', marginTop: '20px' }}>
+                        <Button variant="contained" color="primary" onClick={() => handleCreateHerramienta()}>Crear Herramienta</Button>
+                    </Grid>
                 <TableContainer >
                     <Table border="1px solid white">
                     <TableHead>
