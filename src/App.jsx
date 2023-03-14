@@ -46,6 +46,7 @@ const RutaAdmin = ({children}) => {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/register' element={<Register />} />
+    
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
             <Route path="/equipo" element={<Equipo />} />
