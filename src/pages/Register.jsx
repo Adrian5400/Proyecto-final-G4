@@ -102,7 +102,7 @@ function goHome() {
             <CardContent sx={{ borderColor: 'blanco.color', borderWidth: '1px', borderStyle: 'solid'}}>
               <form onSubmit={handleSubmit}>
 
-                <label>Id User</label>
+                <label>Nombre de Usuario</label>
                 <TextField
                   id="usuario"
                   name="usuario"
@@ -110,7 +110,8 @@ function goHome() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-                  required
+                required
+                
                   value={state.usuario}
                   onChange={handleInputChange}
                   sx={{ backgroundColor: 'blanco.color',marginBottom: '20px' }}
@@ -128,7 +129,7 @@ function goHome() {
                   onChange={handleInputChange}
                   sx={{ backgroundColor: 'blanco.color',marginBottom: '20px' }}
                 />
-                <label>Password</label>
+                <label>Contraseña</label>
                 <TextField
                   id="password"
                   name="password"
@@ -141,7 +142,7 @@ function goHome() {
                   onChange={handleInputChange}
                   sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
                 />
-                <label>Confirm Password</label>
+                <label>Confirmar Contraseña</label>
                 <TextField
                   id="confirmPassword"
                   name="confirmPassword"
@@ -161,7 +162,7 @@ function goHome() {
                   color="primary"
                   fullWidth
                 >
-                  Sign in
+                  Registrar
                 </Button>
                 
               </form>

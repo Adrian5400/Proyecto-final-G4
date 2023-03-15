@@ -37,7 +37,7 @@ const equipo = [
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container min-vh-70 pt-4" >
+    <div className="mx-auto contenedor container min-vh-70 pt-4" style={{  height: '85vh', overflowY: 'scroll' }} >
     <h1 className="pt-5 mb-5 pb-5" style={{textAlign: 'center', color: "var(--color5)"}}>Equipo</h1>
       <Container style={{marginTop: "10vh"}}>
       <Row>
