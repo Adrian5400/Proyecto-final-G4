@@ -14,11 +14,10 @@ return new class extends Migration
         Schema::create('herramientas', function (Blueprint $table) {
             $table->id();
             $table->string("nombre")->nullable();
-            $table->string("desc");
+            $table->string("desc", 500);
             $table->string("image")->nullable();
             $table->set('steps', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17])->nullable();
             $table->timestamps();
-
         });
     }
 

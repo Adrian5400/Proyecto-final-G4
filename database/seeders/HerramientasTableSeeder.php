@@ -53,14 +53,14 @@ class HerramientasTableSeeder extends Seeder
             'nombre' => 'Sierra oscilante',
             'desc' => 'La sierra oscilante es una herramienta quirúrgica que se utiliza para cortar y remodelar huesos en procedimientos de ortopedia.',
             'image' => 'imagen6.jpg',
-            'steps' => 5,
+            'steps' => implode(',', [5,]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Miniseparador esternal',
             'desc' => 'El miniseparador esternal es una herramienta quirúrgica utilizada para separar suavemente los bordes de una incisión en el esternón durante procedimientos de cirugía cardíaca.',
             'image' => 'imagen7.jpg',
-            'steps' => 6,
+            'steps' => implode(',', [6,]),
         ]);
 
         Herramienta::create([
@@ -74,7 +74,7 @@ class HerramientasTableSeeder extends Seeder
             'nombre' => 'Introductor arterial 6F',
             'desc' => 'El introductor arterial 6F es un tubo flexible que se utiliza para acceder a la arteria femoral durante procedimientos de cateterización cardíaca. Se inserta en la arteria y se utiliza para guiar otros instrumentos quirúrgicos.',
             'image' => 'imagen9.jpg',
-            'steps' => implode(',' ,[8, 12]),
+            'steps' => implode(',', [8, 12]),
         ]);
 
         Herramienta::create([
@@ -88,21 +88,21 @@ class HerramientasTableSeeder extends Seeder
             'nombre' => 'Guia teflonda recta 35cm',
             'desc' => 'La guía teflonada recta es un dispositivo utilizado para guiar y dirigir instrumentos quirúrgicos durante procedimientos de cateterización cardíaca. Es un tubo flexible que se inserta en la arteria y se utiliza para guiar otros instrumentos quirúrgicos.',
             'image' => 'imagen11.jpg',
-            'steps' => implode(',' , [9, 11]),
+            'steps' => implode(',', [9, 11]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Cateter Amplatz AL1',
             'desc' => 'El catéter amplatz AL1/AL2 es un dispositivo utilizado en la cirugía cardíaca para medir la presión en las cámaras del corazón. Se inserta a través de una incisión en la ingle y se dirige hacia el corazón.',
             'image' => 'imagen12.jpg',
-            'steps' => 10,
+            'steps' => implode(',', [10,]),
         ]);
-        
+
         Herramienta::create([
             'nombre' => 'Cateter Amplatz AL2',
             'desc' => 'El catéter amplatz AL1/AL2 es un dispositivo utilizado en la cirugía cardíaca para medir la presión en las cámaras del corazón. Se inserta a través de una incisión en la ingle y se dirige hacia el corazón.',
             'image' => 'imagen13.jpg',
-            'steps' => 10,
+            'steps' => implode(',', [10,]),
         ]);
 
         Herramienta::create([
@@ -118,18 +118,12 @@ class HerramientasTableSeeder extends Seeder
             'image' => 'imagen15.jpg',
             'steps' => implode(',', [12, 17]),
         ]);
-        
+
         Herramienta::create([
             'nombre' => 'Cateter balon',
             'desc' => 'Es un dispositivo médico utilizado para tratar estenosis, aneurismas y otras enfermedades vasculares. Consiste en un tubo flexible con un balón en la punta que se infla en el sitio de la obstrucción o el aneurisma para abrir el vaso sanguíneo o sellar el aneurisma.',
             'image' => 'imagen16.jpg',
             'steps' => implode(',', [13, 15, 17]),
         ]);
-
-
-        
-
-
-    
     }
 }

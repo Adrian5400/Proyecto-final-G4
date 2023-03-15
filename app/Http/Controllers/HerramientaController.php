@@ -9,7 +9,7 @@ class HerramientaController extends Controller
 {
     public function index()
     {
-        $herramientas = Herramienta::select('id', 'nombre', 'desc', 'image','steps')->get();
+        $herramientas = Herramienta::select('id', 'nombre', 'desc', 'image', 'steps')->get();
 
         // Map each Herramienta object to a new object that includes the image URL
         $data = $herramientas->map(function ($herramienta) {
@@ -18,7 +18,7 @@ class HerramientaController extends Controller
                 'nombre' => $herramienta->nombre,
                 'desc' => $herramienta->desc,
                 'image_url' => asset('storage/' . $herramienta->image),
-                'steps'=> $herramienta->steps
+                'steps' => $herramienta->steps
             ];
         });
 
@@ -26,7 +26,8 @@ class HerramientaController extends Controller
     }
 
 
-    public function destroy($id){
+    public function destroy($id)
+    {
         $herramienta = Herramienta::findOrFail($id);
         if ($herramienta) {
             $herramienta->delete();
@@ -36,14 +37,14 @@ class HerramientaController extends Controller
         }
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $herramienta = new Herramienta;
         $herramienta->nombre = $request->nombre;
         $herramienta->desc = $request->desc;
-        $herramienta->image= $request->file('image')->store('public/herramientas');
+        $herramienta->image = $request->file('image')->store('public/herramientas');
 
         $herramienta->steps = $request->steps;
         $herramienta->save();
     }
-
 }
