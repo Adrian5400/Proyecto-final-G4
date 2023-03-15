@@ -65,7 +65,9 @@ function ListarUsuarios() {
                         <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{user.name}</TableCell>
                         <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{user.email}</TableCell>
                         <TableCell sx={{ color: theme.palette.blanco.color, border: '1px solid white' }}>
+                          {user.email !== "test@example.com" &&
                             <Button variant="contained" color="error" onClick={() => handleDeleteUser(user.email)}>Borrar</Button>
+                          }
                         </TableCell>
                     </TableRow>
                     ))}

@@ -111,6 +111,7 @@ function goHome() {
                   margin="normal"
                   fullWidth
                   required
+                  multiline
                   value={state.usuario}
                   onChange={handleInputChange}
                   sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
@@ -162,7 +163,7 @@ function goHome() {
                   color="primary"
                   fullWidth
                 >
-                  Sign in
+                  Registrarse
                 </Button>
                 
               </form>

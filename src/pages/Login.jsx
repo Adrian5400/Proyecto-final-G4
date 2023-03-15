@@ -114,7 +114,7 @@ const handleSubmit = async (event) => {
                   color="primary"
                   fullWidth
                 >
-                  Sign in
+                  Aceptar
                 </Button>
               </form>
             </CardContent>

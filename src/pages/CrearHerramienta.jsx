@@ -3,6 +3,7 @@ import { Alert } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField, Button, Card, CardContent, Grid, Input } from '@mui/material';
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 
 const theme= createTheme({
     palette:{
@@ -27,16 +28,29 @@ function CrearHerramienta() {
   const [alerta, setAlerta] = useState('');
   const [severity, setSeverity] = useState('');
 
+  const navigate = useNavigate();
+
+  const handleListarHerramienta = () => {
+      navigate("/herramientas", { replace: true }); 
+  };
+
+
   const handleSubmit =async (event) => {
     event.preventDefault();
-    
+    const regexPasos = /^(\d+)(,\d+)*$/;
+
     const extension = herramienta.imagen.split('.').pop().toLowerCase();
     if (extension!=="jpg" && extension!=="jbx") {
       setAlerta("Formato de imagen incorrecto. Se espera un .jpg o .jbx");
       setSeverity('error');
       document.getElementById('alerta').style.display = 'block';
       
-    } else {
+    } else if (!regexPasos.test(herramienta.pasos)) {
+      setAlerta("La sintaxis de los pasos no es correcta. Deben ser números separados por coma (ej: 1,2,3)");
+      setSeverity('error');
+      document.getElementById('alerta').style.display = 'block';
+
+    }else {
       document.getElementById('alerta').style.display = 'block';
       setSeverity('success');
       setAlerta("Se ha creado la herramienta con éxito");
@@ -76,7 +90,7 @@ function CrearHerramienta() {
 
     return (
         <ThemeProvider theme={theme}>
-           <Grid id="contenedor" sx={{ display:'flex', justifyContent: 'center'}}>
+           <Grid id="contenedor" sx={{ display:'flex', justifyContent: 'center' }}>
              
               <Card sx={{ backgroundColor: 'grisClaro.color',width:"45%"}}>
                 <CardContent sx={{ borderColor: 'blanco.color', borderWidth: '1px', borderStyle: 'solid' }}>
@@ -150,6 +164,17 @@ function CrearHerramienta() {
                   </form>
                 </CardContent>
               </Card>
+              
+          </Grid>
+          <Grid id="contenedor" sx={{ display:'flex', justifyContent: 'center'}}>
+            <Button sx={{width:"15%",  marginTop: '25px', marginBottom: '15px'}}
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+                onClick={() => handleListarHerramienta()}
+              >Volver
+            </Button>
           </Grid>
         </ThemeProvider>
     );
