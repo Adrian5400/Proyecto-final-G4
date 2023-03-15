@@ -110,12 +110,15 @@ function goHome() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
-                required
-                
+
+                  required
+                  multiline
+
                   value={state.usuario}
                   onChange={handleInputChange}
-                  sx={{ backgroundColor: 'blanco.color',marginBottom: '20px' }}
+                  sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
                 />
+                
                 <label>Email</label>
                 <TextField
                   id="email"
@@ -162,7 +165,9 @@ function goHome() {
                   color="primary"
                   fullWidth
                 >
+
                   Registrar
+
                 </Button>
                 
               </form>

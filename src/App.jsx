@@ -12,6 +12,7 @@ import DasFooter from './components/DasFooter';
 import Equipo from './pages/Equipo';
 import ListarUsuarios from './pages/ListarUsuarios';
 import ListarHerramientas from './pages/ListarHerramientas';
+import CrearHerramienta from './pages/CrearHerramienta';
 
 
 
@@ -46,13 +47,14 @@ const RutaAdmin = ({children}) => {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/register' element={<Register />} />
+    
             <Route path="/login" element={<Login />} />
             <Route path="/pasos" element={<RutaProtegida><Pasos /></RutaProtegida> } />
             <Route path="/equipo" element={<Equipo />} />
 
             <Route path="/usuarios" element={<RutaAdmin><ListarUsuarios /></RutaAdmin>} />
             <Route path="/herramientas" element={<RutaAdmin><ListarHerramientas /></RutaAdmin>} />
-
+            <Route path="/crearHerramienta" element={<RutaAdmin><CrearHerramienta /></RutaAdmin>} />
             <Route path="/*" element={<Error />} />
           </Routes>
           <DasFooter />
