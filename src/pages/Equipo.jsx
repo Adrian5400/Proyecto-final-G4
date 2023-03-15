@@ -4,48 +4,33 @@ import { Container, Row, Col, Card, Image } from "react-bootstrap";
 
 const equipo = [
   {
-    nombre: "Juan I.",
-    foto: "https://www.usnews.com/object/image/00000143-de1e-d45e-a37b-ffff416f0000/FE_DA_111219_Kim_Jong_Il_2.jpg?update-time=&size=responsiveFlow640",
+    nombre: "Laravel",
+    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png",
     descripcion:
-      "Le gustan largos paseos por la playa. Misántropo."
+      "Laravel 9 es nuestro backend."
   },
   {
-    nombre: "Guillermo",
-    foto: "https://i.kym-cdn.com/photos/images/newsfeed/001/548/116/85d.jpg",
+    nombre: "React",
+    foto: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
     descripcion:
-      "Primer campeón de España de tiro con arco a caballo."
+      "React 18 es nuestro frontend."
   },
-  {
-    nombre: "Adrián",
-    foto: "https://elitesportsny.com/wp-content/uploads/2022/11/USATSI_15781196-scaled.jpg",
-    descripcion:
-      "Arquitecto del estadio de Maracaná."
-  },
-  {
-    nombre: "Integrante 4",
-    foto: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/94907b77-b2d8-49b7-b288-44472c12db95/ddcsjf6-d7f2f555-0949-4ef5-869f-2dc8b54a2344.jpg/v1/fill/w_1024,h_1536,q_75,strp/the_trainer_and_their_vaporeon_by_naitsabes89_ddcsjf6-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzk0OTA3Yjc3LWIyZDgtNDliNy1iMjg4LTQ0NDcyYzEyZGI5NVwvZGRjc2pmNi1kN2YyZjU1NS0wOTQ5LTRlZjUtODY5Zi0yZGM4YjU0YTIzNDQuanBnIiwiaGVpZ2h0IjoiPD0xNTM2Iiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uud2F0ZXJtYXJrIl0sIndtayI6eyJwYXRoIjoiXC93bVwvOTQ5MDdiNzctYjJkOC00OWI3LWIyODgtNDQ0NzJjMTJkYjk1XC9uYWl0c2FiZXM4OS00LnBuZyIsIm9wYWNpdHkiOjk1LCJwcm9wb3J0aW9ucyI6MC40NSwiZ3Jhdml0eSI6ImNlbnRlciJ9fQ.tHAtSRm7mjnP4z1FFme3H0b4Coy0AX_hM4DsdShN-aM",
-    descripcion:
-      "Filósofo, guerrero, oficial y caballero."
-  },
-  {
-    nombre: "ChatGPT",
-    foto: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
-    descripcion:
-      "Tu colega. Tu amigo. Tu compañero."
-  }
+
 ];
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container min-vh-70 pt-4" style={{  height: '85vh', overflowY: 'scroll' }} >
-    <h1 className="pt-5 mb-5 pb-5" style={{textAlign: 'center', color: "var(--color5)"}}>Equipo</h1>
+    <div className="mx-auto contenedor container pt-4" style={{  height: '85vh', overflowY: 'scroll' }} >
+      <h1 className="pt-5 mb-1 pb-1" style={{ textAlign: 'center', color: "var(--color5)" }}>Curso de DAW 2ªA IES Monte Naranco</h1>
+          <h2 className="pt-5 mb-1 pb-1" style={{textAlign: 'center', color: "var(--color5)"}}>Tecnologías Usadas</h2>
+
       <Container style={{marginTop: "10vh"}}>
       <Row>
         {equipo.map((miembro) => (
           <Col key={miembro.nombre}>
             <Card className="my-3 col-xs-12">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                <Image src={miembro.foto} roundedCircle style={{height: "20vh", objectFit:"cover"}} className="mb-3" />
+                <Image src={miembro.foto} style={{height: "50vh", objectFit:"contain"}} className="mb-3" />
                 <Card.Title style={{color: "var(--color3)"}}>{miembro.nombre}</Card.Title>
                 <Card.Text className="text-center" style={{color: "var(--color3)"}}>{miembro.descripcion}</Card.Text>
               </Card.Body>
