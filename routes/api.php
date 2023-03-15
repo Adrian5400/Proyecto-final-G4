@@ -28,4 +28,4 @@ Route::post('/users', 'App\Http\Controllers\UserController@store');
 Route::post('/login', 'App\Http\Controllers\UserController@login');
 Route::delete('/users/{email}', 'App\Http\Controllers\UserController@delete');
 Route::delete('/herramientas/{id}', 'App\Http\Controllers\HerramientaController@destroy');
-
+Route::post('/herramientas', 'App\Http\Controllers\HerramientaController@store');

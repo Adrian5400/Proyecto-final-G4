@@ -36,4 +36,14 @@ class HerramientaController extends Controller
         }
     }
 
+    public function store(Request $request){
+        $herramienta = new Herramienta;
+        $herramienta->nombre = $request->nombre;
+        $herramienta->desc = $request->desc;
+        $herramienta->image= $request->file('image')->store('public/herramientas');
+
+        $herramienta->steps = $request->steps;
+        $herramienta->save();
+    }
+
 }
