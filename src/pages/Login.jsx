@@ -94,7 +94,7 @@ const handleSubmit = async (event) => {
                   onChange={handleInputChange}
                   sx={{ backgroundColor: 'blanco.color',marginBottom: '20px' }}
                 />
-                <label>Password</label>
+                <label>Contraseña</label>
                 <TextField
                   id="password"
                   name="password"
@@ -114,7 +114,7 @@ const handleSubmit = async (event) => {
                   color="primary"
                   fullWidth
                 >
-                  Aceptar
+                  Iniciar sesión
                 </Button>
               </form>
             </CardContent>
