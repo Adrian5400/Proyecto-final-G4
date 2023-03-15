@@ -10,14 +10,35 @@
   height: 150px;
 }
 
-.cuerpo{
+.cuerpo {
   width: 350px;
 }
 
-.contenedor{
+.contenedor {
   background-color: #4c595b;
 }
 
-body{
-  background-color: #8f9ea9
+body {
+  background-color: #8f9ea9;
+}
+
+.separador {
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    margin: 10px 0;
+}
+
+.oculto {
+  visibility: hidden;
+}
+
+.muestra {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.muestra:hover {
+  color: blue;
+  text-decoration: underline;
 }
