@@ -82,7 +82,7 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
           </div>
         </div>
       )}
-      {mostrarPasos && <ZonaPasos />}
+        {mostrarPasos && <ZonaPasos tarjetas={tarjetas} />}
       </div>
       </ContextoHerramientas.Provider>
   );
