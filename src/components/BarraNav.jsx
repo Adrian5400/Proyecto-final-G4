@@ -31,7 +31,7 @@ if(usuarioPagina.admin){
     <Navbar style={{ backgroundColor: "var(--color1)", position: "fixed", top: '0', width: "100%" }}>
       <Navbar.Brand className="col-sm-6 col-md-8 col-lg-8">
     <span className='spanAdmin' style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
-    <span className='spanAdmin' style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
+    <span className='spanAdmin' style={{ color: activeLink === 'modelos3d' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('modelos3d'); goVistaHerramientas()}}>3D</span>
     <span className='spanAdmin' style={{ color: activeLink === 'pasos' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('pasos'); goPasos()}}>Pasos</span>
     <span className='spanAdmin' style={{ color: activeLink === 'usuarios' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('usuarios'); goUsuarios()}}>Usuarios</span>
     <span className='spanAdmin' style={{ color: activeLink === 'herramientas' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('herramientas'); goHerramientas()}}>Herramientas</span>
@@ -47,10 +47,10 @@ if(usuarioPagina.admin){
     return ( 
       <Navbar style={{ backgroundColor: "var(--color1)", position: "fixed", top: '0', width: "100%" }}>
         <Navbar.Brand className="col-sm-6 col-md-8 col-lg-8">
-          <span style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
-          <span style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
-          <span style={{ color: activeLink === 'pasos' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('pasos'); goPasos()}}>Pasos</span>
-          <span style={{ color: activeLink === 'modelos3d' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('modelos3d'); goVistaHerramientas()}}>Herramientas</span>
+          <span className='spanUser' style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
+          <span className='spanUser' style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
+          <span className='spanUser' style={{ color: activeLink === 'pasos' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('pasos'); goPasos()}}>Pasos</span>
+          <span className='spanUser' style={{ color: activeLink === 'modelos3d' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('modelos3d'); goVistaHerramientas()}}>Herramientas</span>
         </Navbar.Brand>
           <Nav className="ml-auto col-sm-6 col-md-4 col-lg-4 d-flex justify-content-evenly">
         <span className="hide-on-md" style={{ color: "var(--color5)", marginRight: "1em", paddingTop: "0.5em" }}>{usuarioPagina.email}</span>
@@ -67,7 +67,7 @@ if(usuarioPagina.admin){
           <span style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: "3em" }} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
           <span style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: "3em" }} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
         </Navbar.Brand>
-        <Nav className="ml-auto col-sm-2 col-md-4 col-lg-3 d-flex justify-content-evenly">
+        <Nav className="ml-auto col-sm-6 col-md-4 col-lg-3 d-flex justify-content-evenly">
           <Nav.Link  className="mr-3" style={{ color: activeLink === 'register' ? '#b78700' : "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => {changeActive('register'); goRegister()}}>Registrarse</Nav.Link>
           <Nav.Link  style={{ color: activeLink === 'login' ? '#b78700' : "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => {changeActive('login'); goLogin()}}>Login</Nav.Link>      
         </Nav>

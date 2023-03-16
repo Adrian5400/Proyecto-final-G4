@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 
 import { Contexto } from './../App';
 import augusto from './../img/augusto.png';
-import caixa from './../img/caixabank.png';
+import caixa from './../img/LaCaixa.png';
 import naranco from './../img/naranco.png';
 function Home() {
 
@@ -28,7 +28,7 @@ function Home() {
         imagenesContenedor.children[0].classList.remove("imagen-salida");
         imagenesContenedor.children[0].classList.add("imagen-entrada");
       });
-    }, 3000); // Cambia la imagen cada 3 segundos
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
