@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('pasos', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo', 200);
             $table->integer('numeroPaso');
             $table->string("desc", 500);
             $table->timestamps();

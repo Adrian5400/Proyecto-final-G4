@@ -9,12 +9,13 @@ class PasoController extends Controller
 {
     public function index()
     {
-        $pasos = Paso::select('id', 'numeroPaso', 'desc')->get();
+        $pasos = Paso::select('id', 'titulo', 'numeroPaso', 'desc')->get();
 
         // Map each Herramienta object to a new object that includes the image URL
         $data = $pasos->map(function ($paso) {
             return [
                 'id' => $paso->id,
+                'titulo' => $paso->titulo,
                 'numeroPaso' => $paso->numeroPaso,
                 'desc' => $paso->desc,
             ];

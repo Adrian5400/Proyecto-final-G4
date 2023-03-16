@@ -37,7 +37,7 @@ class HerramientasTableSeeder extends Seeder
 
         Herramienta::create([
             'nombre' => 'Sistema de radioscopia',
-            'desc' => 'La radioscopia es un método de diagnóstico por imagen que utiliza rayos X y tecnología de video para producir imágenes en tiempo real de las estructuras internas del cuerpo. Se utiliza comúnmente durante los procedimientos quirúrgicos para guiar la colocación de dispositivos y para monitorear la progresión del procedimiento.',
+            'desc' => 'Es un método de diagnóstico por imagen que utiliza rayos X y tecnología de video para producir imágenes en tiempo real del interior del cuerpo. Se utiliza para guiar la colocación de dispositivos y para monitorear la progresión del procedimiento.',
             'image' => 'imagen4.jpg',
             'steps' => implode(',', [4, 14, 16]),
         ]);
