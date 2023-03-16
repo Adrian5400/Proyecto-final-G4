@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col, Card, Button} from "react-bootstrap";
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import './css/herramientas.css';
+
 import { Modal } from "react-bootstrap";
 
 

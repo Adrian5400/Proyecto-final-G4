@@ -2,8 +2,11 @@ import React, { Component, useContext } from 'react';
 import { Alert } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { TextField, Button, Card, CardContent, Grid, Input } from '@mui/material';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import Modal from '@mui/material/Modal';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+
 
 const theme= createTheme({
     palette:{
@@ -27,6 +30,20 @@ function CrearHerramienta() {
 
   const [alerta, setAlerta] = useState('');
   const [severity, setSeverity] = useState('');
+  const [pasos, setPasos] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+
+
+  const fetchPasos = async () => {
+    
+    const response = await fetch('http://127.0.0.1:8000/api/pasos');
+    const data = await response.json();
+    setPasos(data);
+  };
+
+  useEffect(() => {
+    fetchPasos();
+  }, []);
 
   const navigate = useNavigate();
 
@@ -34,14 +51,54 @@ function CrearHerramienta() {
       navigate("/herramientas", { replace: true }); 
   };
 
+  const handleOpenPasosModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleClosePasosModal = () => {
+    setModalOpen(false);
+  };
+
+ 
+  const PasosModal = ({ open, handleClose, pasos }) => {
+   
+    
+    return (
+      <Modal sx={{ width: {xs: '100%', md: '27%'} , marginTop:{xs: '8em', md: '3.5em'}}} open={open} onClose={handleClose}>
+         
+         <Paper sx={{ maxHeight: {xs: '60vh', md: '80vh'}, overflow: 'auto', mx: 2, mt: 2 }}>
+            <TableContainer sx={{borderColor: 'blanco.color', borderWidth: '3px', borderStyle: 'solid'}}>
+              <Table>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>ID</TableCell>
+                    <TableCell>Descripción</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {pasos.map((paso) => (
+                    <TableRow key={paso.id}>
+                      <TableCell>{paso.id}</TableCell>
+                      <TableCell>{paso.desc}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Paper>
+      </Modal>
+    );
+  };
+
+  
 
   const handleSubmit =async (event) => {
     event.preventDefault();
     const regexPasos = /^(\d+)(,\d+)*$/;
 
     const extension = herramienta.imagen.split('.').pop().toLowerCase();
-    if (extension!=="jpg" && extension!=="jbx") {
-      setAlerta("Formato de imagen incorrecto. Se espera un .jpg o .jbx");
+    if (extension!=="jpg" && extension!=="fbx") {
+      setAlerta("Formato de imagen incorrecto. Se espera un .jpg o .fbx");
       setSeverity('error');
       document.getElementById('alerta').style.display = 'block';
       
@@ -124,6 +181,7 @@ function CrearHerramienta() {
                       onChange={handleChange}
                       sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
                     />
+
                     <label>Imagen</label>
                     <Input
                         id="imagen"
@@ -164,17 +222,28 @@ function CrearHerramienta() {
                   </form>
                 </CardContent>
               </Card>
-              
           </Grid>
-          <Grid id="contenedor" sx={{ display:'flex', justifyContent: 'center'}}>
-            <Button sx={{width:"15%",  marginTop: '25px', marginBottom: '15px'}}
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-                onClick={() => handleListarHerramienta()}
-              >Volver
-            </Button>
+
+          <Grid  sx={{ display:'flex', justifyContent: 'center'}}>
+            <Grid  sx={{width:"50%", display:'flex', justifyContent: 'center',  gap: '2rem'}}>
+              <Button sx={{width:"20%",  marginTop: '25px', marginBottom: '15px'}}
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={() => handleListarHerramienta()}
+                >Volver
+              </Button>
+              <Button sx={{width:"20%",  marginTop: '25px', marginBottom: '15px'}}
+                  type="submit"
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={() => handleOpenPasosModal()}
+                >Ver Pasos
+              </Button>
+              <PasosModal open={modalOpen} handleClose={handleClosePasosModal} pasos={pasos} />
+            </Grid>
           </Grid>
         </ThemeProvider>
     );

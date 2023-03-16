@@ -13,7 +13,7 @@ import Equipo from './pages/Equipo';
 import ListarUsuarios from './pages/ListarUsuarios';
 import ListarHerramientas from './pages/ListarHerramientas';
 import CrearHerramienta from './pages/CrearHerramienta';
-
+import Herramientas from './pages/Herramientas';
 
 
 export const Contexto = createContext();
@@ -53,6 +53,7 @@ const RutaAdmin = ({children}) => {
             <Route path="/equipo" element={<Equipo />} />
 
             <Route path="/usuarios" element={<RutaAdmin><ListarUsuarios /></RutaAdmin>} />
+            <Route path="/modelos3d" element={<Herramientas/>}/>
             <Route path="/herramientas" element={<RutaAdmin><ListarHerramientas /></RutaAdmin>} />
             <Route path="/crearHerramienta" element={<RutaAdmin><CrearHerramienta /></RutaAdmin>} />
             <Route path="/*" element={<Error />} />

@@ -8,10 +8,8 @@ function Pasos() {
             <div className="container">
                 <div className="row">
                     <Inicio></Inicio>
-                    </div>
                 </div>
-
-            
+            </div>
         </div>
     
 
