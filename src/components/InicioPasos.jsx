@@ -2,16 +2,17 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import ZonaPasos from './BarraPasos';
+
 export const ContextoHerramientas = createContext();
 
 function Inicio() {
   const [mostrarPasos, setMostrarPasos] = useState(false);
   const [tarjetas, setTarjetas] = useState([]);
-const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/2032808081/display_1500/stock-photo-portrait-of-a-female-pirate-mercenary-standing-on-the-deck-of-her-ship-armed-and-ready-for-battle-2032808081.jpg'
+  const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/2032808081/display_1500/stock-photo-portrait-of-a-female-pirate-mercenary-standing-on-the-deck-of-her-ship-armed-and-ready-for-battle-2032808081.jpg'
+
   const handleSiguienteClick = () => {
     setMostrarPasos(true);
   };
- 
 
   useEffect(() => {
     async function getHerramientas() {
@@ -22,19 +23,19 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
     getHerramientas();
   }, []);
 
-
+  console.log(tarjetas);
 
   function Tarjeta(props) {
-    const { nombre, desc, image_url, steps  } = props;
+    const { nombre, desc, image_url, steps } = props;
 
     return (
-      <Card sx={{ width: '15em' }}>
-        <CardMedia component='img' image={image_url} alt={nombre} onError={(e) => { e.target.onerror = null; e.target.src=placeholderImage}}   />
+      <Card sx={{ maxWidth: '15em', margin: '1.8rem', marginTop: '3rem' }}>
+        <CardMedia component='img' image={image_url} alt={nombre} sx={{ height: '14em' }} onError={(e) => { e.target.onerror = null; e.target.src = placeholderImage }} />
         <CardContent>
-          <Typography gutterBottom variant='h5' component='div'>
+          <Typography gutterBottom variant='h5' component='div' sx={{ fontWeight: 'bold' }}>
             {nombre}
           </Typography>
-          <Typography variant='body2' color='text.secondary'>
+          <Typography variant='body2' color='text.secondary' sx={{ marginBottom: '0.8rem' }}>
             {desc}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
@@ -45,48 +46,40 @@ const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/20328
     );
   }
 
-  function FilaTarjetas(props) {
-    const { tarjetas } = props;
-
-    return (
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {tarjetas.map((tarjeta, index) => (
-          <div key={index} style={{ flexBasis: '25%', padding: '10px' }}>
-            <Tarjeta {...tarjeta} />
-          </div>
-        ))}
-      </div>
-    );
-  }
-
-
   return (
-        <ContextoHerramientas.Provider value={{
-      tarjetas
-    }}>
-    <div style={{ backgroundColor: 'var(--color2)', height: '85vh', overflowY: 'scroll' }} >
-      {!mostrarPasos && (
-        <div>
-          <h1 style={{ color: 'var(--color5)', textAlign: 'center', marginTop: '3rem' }}>¿Dispones de estas herramientas a mano?</h1>
-          <FilaTarjetas tarjetas={tarjetas.slice(0, 4)} />
-          <FilaTarjetas tarjetas={tarjetas.slice(4)} />
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', marginBottom: '3rem' }}>
-            <Button
-              variant='contained'
-              color='primary'
-              onClick={handleSiguienteClick}
-              style={{ backgroundColor: 'var(--color3)' }}
-            >
-              Siguiente
-            </Button>
+    <ContextoHerramientas.Provider value={{ tarjetas }}>
+      <div style={{ backgroundColor: 'var(--color2)', height: '85vh' }}>
+        {!mostrarPasos && (
+          <div className='container'>
+  <div style={{ backgroundColor: 'var(--color1)'}}>
+                <h1 style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '1.5rem', color: 'var(--color5)'}}>¿Dispones de todas estas herramientas?</h1>
+              
+            
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem'}}>
+              <Button variant='contained' color='primary' onClick={handleSiguienteClick} style={{ backgroundColor: 'var(--color3)', marginBottom: '1rem'}}>
+                Siguiente
+              </Button>
+            </div>
+            </div>
+            
+            <div className='col-12' style={{ height: '85vh', marginLeft: '2rem', marginRight: '2rem'}}>
+              <div className='d-flex flex-wrap'>
+                {tarjetas.map((tarjeta) => (
+                  <Tarjeta key={tarjeta.id} {...tarjeta} />
+                ))}
+              </div>
+            </div>
+
+          
           </div>
-        </div>
-      )}
+
+
+        )}
         {mostrarPasos && <ZonaPasos tarjetas={tarjetas} />}
       </div>
-      </ContextoHerramientas.Provider>
+
+    </ContextoHerramientas.Provider>
   );
 }
-
 
 export default Inicio;

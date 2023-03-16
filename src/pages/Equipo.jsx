@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
+import "./css/ocultarBarra.css";
 
 
 const equipo = [
@@ -20,17 +21,17 @@ const equipo = [
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container pt-4" style={{  height: '85vh', overflowY: 'scroll' }} >
+    <div className="mx-auto contenedor container pt-3" style={{  height: '85vh', overflowY: 'scroll' }} >
       <h1 className="pt-5 mb-1 pb-1" style={{ textAlign: 'center', color: "var(--color5)" }}>Curso de DAW 2ªA IES Monte Naranco</h1>
           <h2 className="pt-5 mb-1 pb-1" style={{textAlign: 'center', color: "var(--color5)"}}>Tecnologías Usadas</h2>
 
-      <Container style={{marginTop: "10vh"}}>
+      <Container style={{marginTop: "6vh"}}>
       <Row>
         {equipo.map((miembro) => (
           <Col key={miembro.nombre}>
             <Card className="my-3 col-xs-12">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                <Image src={miembro.foto} style={{height: "50vh", objectFit:"contain"}} className="mb-3" />
+                <Image src={miembro.foto} style={{height: "40vh", width: "30vh", objectFit:"contain"}} className="mb-3" />
                 <Card.Title style={{color: "var(--color3)"}}>{miembro.nombre}</Card.Title>
                 <Card.Text className="text-center" style={{color: "var(--color3)"}}>{miembro.descripcion}</Card.Text>
               </Card.Body>

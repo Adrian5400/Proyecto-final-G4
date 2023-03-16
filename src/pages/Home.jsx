@@ -28,7 +28,7 @@ function Home() {
         imagenesContenedor.children[0].classList.remove("imagen-salida");
         imagenesContenedor.children[0].classList.add("imagen-entrada");
       });
-    }, 5000); // Cambia la imagen cada 5 segundos
+    }, 3000); // Cambia la imagen cada 3 segundos
     return () => clearInterval(interval);
   }, []);
 
