@@ -17,63 +17,63 @@ class HerramientasTableSeeder extends Seeder
         Herramienta::create([
             'nombre' => 'Heparina Sodica',
             'desc' => 'La heparina sódica es un anticoagulante que se utiliza para prevenir la formación de coágulos en la sangre y tratar trastornos de la coagulación. Se administra por vía intravenosa y su objetivo es evitar la formación de coágulos en la circulación sanguínea',
-            'image' => 'heparina.jpg',
+            'image' => 'imagen1.jpg',
             'steps' => 1,
         ]);
 
         Herramienta::create([
             'nombre' => 'Electrodo marcapasos',
             'desc' => 'El electrodo marcapasos es un dispositivo utilizado en la cirugía cardíaca para monitorizar y controlar el ritmo cardíaco. Se coloca en el corazón y se conecta a un marcapasos externo que envía impulsos eléctricos para regular el ritmo cardíaco',
-            'image' => 'electrodo_marcapasos.jpg',
+            'image' => 'imagen2.jpg',
             'steps' => 2,
         ]);
 
         Herramienta::create([
             'nombre' => 'Cateter pigtail',
             'desc' => 'El catéter pigtail es un tubo flexible que se utiliza para drenar fluidos de la cavidad abdominal. Se introduce a través de una pequeña incisión en la piel y se dirige hacia el área a drenar. Se usa en procedimientos como la extracción de líquido del pulmón.',
-            'image' => 'cateter_pigtail.jpg',
+            'image' => 'imagen3.png',
             'steps' => implode(',', [3, 11, 13]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Sistema de radioscopia',
             'desc' => 'Es un método de diagnóstico por imagen que utiliza rayos X y tecnología de video para producir imágenes en tiempo real del interior del cuerpo. Se utiliza para guiar la colocación de dispositivos y para monitorear la progresión del procedimiento.',
-            'image' => 'radioscopia.jpg',
+            'image' => 'imagen4.jpg',
             'steps' => implode(',', [4, 14, 16]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Bisturí',
             'desc' => 'El bisturí es un instrumento quirúrgico de corte utilizado para realizar incisiones en la piel y los tejidos subyacentes durante una operación.',
-            'image' => 'bisturí.jpg',
+            'image' => 'imagen5.png',
             'steps' => implode(',', [5, 8]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Sierra oscilante',
             'desc' => 'La sierra oscilante es una herramienta quirúrgica que se utiliza para cortar y remodelar huesos en procedimientos de ortopedia.',
-            'image' => 'sierra.png',
+            'image' => 'imagen6.png',
             'steps' => implode(',', [5,]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Miniseparador esternal',
             'desc' => 'El miniseparador esternal es una herramienta quirúrgica utilizada para separar suavemente los bordes de una incisión en el esternón durante procedimientos de cirugía cardíaca.',
-            'image' => 'separador.jpg',
+            'image' => 'imagen7.jpg',
             'steps' => implode(',', [6,]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Punto quirurjico',
             'desc' => 'El punto quirúrgico es una técnica de sutura utilizada para cerrar heridas y cortes en la piel. Se realiza con una aguja de sutura y hilo de sutura, y se usa para mantener los bordes de la piel juntos mientras cicatrizan.',
-            'image' => 'punto.jpg',
+            'image' => 'imagen8.jpg',
             'steps' => implode(',', [6, 7, 17]),
         ]);
 
         Herramienta::create([
             'nombre' => 'Introductor arterial 6F',
             'desc' => 'El introductor arterial 6F es un tubo flexible que se utiliza para acceder a la arteria femoral durante procedimientos de cateterización cardíaca. Se inserta en la arteria y se utiliza para guiar otros instrumentos quirúrgicos.',
-            'image' => 'introductor.jpg',
+            'image' => 'imagen9.jpg',
             'steps' => implode(',', [8, 12]),
         ]);
 
@@ -115,7 +115,7 @@ class HerramientasTableSeeder extends Seeder
         Herramienta::create([
             'nombre' => 'Introductor certitude',
             'desc' => ' Un dispositivo utilizado para la colocación de marcapasos. Se inserta en la vena subclavia y guía el electrodo del marcapasos hacia el corazón.',
-            'image' => 'Insertor_grande_Paso10.fbx',
+            'image' => 'certitude.png',
             'steps' => implode(',', [12, 17]),
         ]);
 
