@@ -8,7 +8,7 @@ export const ContextoHerramientas = createContext();
 function Inicio() {
   const [mostrarPasos, setMostrarPasos] = useState(false);
   const [tarjetas, setTarjetas] = useState([]);
-  const placeholderImage = 'https://www.shutterstock.com/shutterstock/photos/2032808081/display_1500/stock-photo-portrait-of-a-female-pirate-mercenary-standing-on-the-deck-of-her-ship-armed-and-ready-for-battle-2032808081.jpg'
+  const placeholderImage = 'https://www.kindpng.com/picc/m/500-5007843_nursing-clipart-scissors-surgeon-clipart-hd-png-download.png'
 
   const handleSiguienteClick = () => {
     setMostrarPasos(true);
