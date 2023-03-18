@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './Herramientas.css';
 
-function Herramientas() {
+
+
+function HerramientasBusqueda() {
 
   const [herramientas, setHerramientas] = useState([]);
   const [herramientasCompletas, setHerramientasCompletas] = useState([]);
@@ -124,4 +124,4 @@ function Herramientas() {
   )
 }
 
-export default Herramientas
+export default HerramientasBusqueda

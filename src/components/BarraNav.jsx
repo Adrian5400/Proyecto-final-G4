@@ -32,6 +32,7 @@ export default function BarraNav() {
   const goUsuarios = () => navigate("/usuarios", { replace: true });
   const goVistaHerramientas = () => navigate("/modelos3d", { replace: true });
   const goHerramientas = () => navigate("/herramientas", { replace: true });
+  const goHerramientasBusqueda = () => navigate("/modelos3dBusqueda", { replace: true });
   const goLogout = () => {
     
     setUsuarioPagina({ email: '', loggedIn: false, admin: false });
@@ -56,7 +57,7 @@ const handleClose = () => {
     return (
       <Modal sx={{width:'100%' ,display: 'flex', alignItems: 'center', justifyContent: 'center'}} open={open} onClose={handleClose}>
         <Paper sx={{width:'30%', maxHeight: {xs: '60vh', md: '80vh'}, display: 'flex',flexDirection:'column', alignItems: 'center', paddingTop:3, paddingBottom:3, borderColor: 'grisClaro.color', borderWidth: '5px', borderStyle: 'solid', borderRadius: '10px'}}>
-          <h1 style={{textAlign: 'center', margin: 0, paddingBottom:3}}>Tu sesión ha finalizado</h1>
+          <h2 style={{textAlign: 'center', margin: 0, paddingBottom:3}}>Tu sesión ha finalizado</h2>
           <Button style={{marginTop:10}} variant="contained" color="error" onClick={goLogout}>Continuar</Button>
         </Paper>
       </Modal>

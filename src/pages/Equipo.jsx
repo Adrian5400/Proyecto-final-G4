@@ -21,17 +21,17 @@ const equipo = [
 
 const Equipo = () => {
   return (
-    <div className="mx-auto contenedor container pt-3" style={{  height: '85vh', overflowY: 'scroll' }} >
-      <h1 className="pt-5 mb-1 pb-1" style={{ textAlign: 'center', color: "var(--color5)" }}>Curso de DAW 2ªA IES Monte Naranco</h1>
-          <h2 className="pt-5 mb-1 pb-1" style={{textAlign: 'center', color: "var(--color5)"}}>Tecnologías Usadas</h2>
+    <div className="mx-auto contenedor container pt-3" >
+      <h1 className="pt-2 mb-1 pb-1" style={{ textAlign: 'center', color: "var(--color5)" }}>Curso de DAW 2ªA IES Monte Naranco</h1>
+          <h2 className="pt-2 mb-1 pb-1" style={{textAlign: 'center', color: "var(--color5)"}}>Tecnologías Usadas</h2>
 
-      <Container style={{marginTop: "6vh"}}>
+      <Container >
       <Row>
         {equipo.map((miembro) => (
           <Col key={miembro.nombre}>
             <Card className="my-3 col-xs-12">
               <Card.Body className="d-flex flex-column justify-content-center align-items-center">
-                <Image src={miembro.foto} style={{height: "40vh", width: "30vh", objectFit:"contain"}} className="mb-3" />
+                <Image src={miembro.foto} style={{height: "30vh", width: "20vh", objectFit:"contain"}} className="mb-3" />
                 <Card.Title style={{color: "var(--color3)"}}>{miembro.nombre}</Card.Title>
                 <Card.Text className="text-center" style={{color: "var(--color3)"}}>{miembro.descripcion}</Card.Text>
               </Card.Body>
@@ -41,7 +41,7 @@ const Equipo = () => {
       </Row>
    
 
-    <Row style={{marginTop: '2rem'}}>
+    <Row style={{marginTop: '1rem',marginBottom: '1rem'}}>
           <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
         <div className="row">
             <div className="col-sm-12 text-center">
@@ -54,20 +54,7 @@ const Equipo = () => {
     </Row>
 
     
-    <Row style={{marginTop: '3rem'}}>
-          <Container style={{
-            backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
-        <div className="row">
-            <div className="col-sm-12 text-center">
-                <p className="mt-3 mb-5" style={{ color: "var(--color5)" }}>
-Nuestro equipo está compuesto por individuos con antecedentes diversos y perspectivas únicas, lo que nos permite abordar los problemas desde diferentes ángulos y encontrar soluciones creativas. Creemos que la colaboración y la comunicación son esenciales para el éxito de cualquier proyecto, y nos aseguramos de mantener una comunicación constante entre nosotros para asegurarnos de que todos estamos en la misma página.
-
-
-                </p>
-            </div>
-            </div>
-          </Container>
-    </Row>
+    
     </Container>
     </div>
 
