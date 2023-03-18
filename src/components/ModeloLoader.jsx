@@ -1,7 +1,9 @@
+
 import "./css/styles.css";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls, useFBX } from "@react-three/drei";
 import { Suspense } from "react";
+import { AmbientLight, DirectionalLight } from 'three';
 
 const Scene = (props) => {
   const fbx = useFBX(props.url);
@@ -9,15 +11,12 @@ const Scene = (props) => {
   return <primitive object={fbx} scale={0.005} />;
 };
 
-/* 
-Esto tengo que cambiarle cosas que se ve regulero en las cards, 
-pero funciona. Scene recibe la url como props y la pasa a useFBX, 
-que es el que carga el modelo 3d.  */
-
 export default function ModeloLoader({ url }) {
   return (
     <div className="App">
      <Canvas gl={{ width: 500, height: 500 }}>
+        <ambientLight intensity={0.5} />
+        <directionalLight intensity={0.5} position={[0, 10, 0]} />
         <Suspense fallback={null}>
           <Scene url={url} />
           <OrbitControls />
@@ -27,8 +26,3 @@ export default function ModeloLoader({ url }) {
     </div>
   );
 }
-
-
-
-//PARA FUNCIONAR, DEBE ESTAR METIDO EN UN ELEMENTO <CANVAS></CANVAS>
-//P.EJ <Canvas><ModeloLoader path={path} /></Canvas>
