@@ -13,7 +13,9 @@ import Equipo from './pages/Equipo';
 import ListarUsuarios from './pages/ListarUsuarios';
 import ListarHerramientas from './pages/ListarHerramientas';
 import CrearHerramienta from './pages/CrearHerramienta';
+import Test from './pages/Test';
 import HerramientasBusqueda from './pages/HerramientasBusqueda';
+
 
 export const Contexto = createContext();
 function App() {
@@ -55,6 +57,7 @@ const RutaAdmin = ({children}) => {
             <Route path="/modelos3d" element={<RutaProtegida><HerramientasBusqueda/></RutaProtegida>}/>
             <Route path="/herramientas" element={<RutaAdmin><ListarHerramientas /></RutaAdmin>} />
             <Route path="/crearHerramienta" element={<RutaAdmin><CrearHerramienta /></RutaAdmin>} />
+            <Route path="/testing" element={<Test/>}/>
             <Route path="/*" element={<Error />} />
           </Routes>
           <DasFooter />

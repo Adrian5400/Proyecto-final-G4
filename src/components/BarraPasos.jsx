@@ -158,6 +158,7 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
+                
                 <img src={tarjetasPaso1[0].image_url} alt={tarjetasPaso1[0].nombre} border="0" />
               </div>
               <div className='col-md-6'>

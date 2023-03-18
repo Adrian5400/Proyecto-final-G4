@@ -1,28 +1,27 @@
+import React, { Suspense } from 'react'
+import { Canvas, useLoader } from 'react-three-fiber'
+import { OrbitControls } from '@react-three/drei'
+import { FBXLoader } from 'three-stdlib'
 
-import "./css/styles.css";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls, useFBX } from "@react-three/drei";
-import { Suspense } from "react";
-import { AmbientLight, DirectionalLight } from 'three';
-
-const Scene = (props) => {
-  const fbx = useFBX(props.url);
-
-  return <primitive object={fbx} scale={0.005} />;
-};
-
-export default function ModeloLoader({ url }) {
+export default function ModeloLoader({ path }) {
+  console.log(path);
+  const fileName = path.split('/').pop() // extract file name from path
+  const url = `${path}#${fileName}` // append file name to blob URL
+  console.log(url)
   return (
-    <div className="App">
-     <Canvas gl={{ width: 500, height: 500 }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight intensity={0.5} position={[0, 10, 0]} />
-        <Suspense fallback={null}>
-          <Scene url={url} />
-          <OrbitControls />
-          <Environment preset="sunset" background />
-        </Suspense>
-      </Canvas>
+    <div style={{height: "50vh", width: "50vw"}}>
+    <Canvas camera={{ position: [0, 0, 13], fov: 50 }} style={{backgroundColor: "white"}}>
+      <directionalLight position={[10, 10, 5]} intensity={1.5} />
+      <Suspense fallback={null}>
+        <Model position-y={0} scale={[0.2, 0.2, 0.2]} url={url} />
+      </Suspense>
+      <OrbitControls autoRotate />
+    </Canvas>
     </div>
-  );
+  )
+}
+
+function Model({ url, ...props }) {
+  const scene = useLoader(FBXLoader, url)
+  return <primitive object={scene} {...props} />
 }
