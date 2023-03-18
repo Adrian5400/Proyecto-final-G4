@@ -1,12 +1,17 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Seeder;
 use App\Models\Herramienta;
 
+
+
 class HerramientasTableSeeder extends Seeder
 {
+
+
+
     /**
      * Run the database seeds.
      *
@@ -14,6 +19,18 @@ class HerramientasTableSeeder extends Seeder
      */
     public function run()
     {
+$modeloValvula = Storage::disk('public')->get('valvula.fbx');
+$valvulaEncoded = base64_encode($modeloValvula);
+$modeloAguja = Storage::disk('public')->get('Aguja_guía_Paso01.fbx');
+$agujaEncoded = base64_encode($modeloAguja);
+$modeloBalon = Storage::disk('public')->get('Balón_Paso12.fbx');
+$balonEncoded = base64_encode($modeloBalon);
+$modeloInsertorGran = Storage::disk('public')->get('Insertor_grande_Paso10.fbx');
+$insertorGranEncoded = base64_encode($modeloInsertorGran);
+$modeloIntroductor = Storage::disk('public')->get('Introductor_pequeno_Paso03.fbx');
+$introductorEncoded = base64_encode($modeloIntroductor);
+$modeloPresurizador = Storage::disk('public')->get('Presurizador.fbx');
+$presurizadorEncoded = base64_encode($modeloPresurizador);
         Herramienta::create([
             'nombre' => 'Heparina Sodica',
             'desc' => 'La heparina sódica es un anticoagulante que se utiliza para prevenir la formación de coágulos en la sangre y tratar trastornos de la coagulación. Se administra por vía intravenosa y su objetivo es evitar la formación de coágulos en la circulación sanguínea',
@@ -73,15 +90,17 @@ class HerramientasTableSeeder extends Seeder
         Herramienta::create([
             'nombre' => 'Introductor arterial 6F',
             'desc' => 'El introductor arterial 6F es un tubo flexible que se utiliza para acceder a la arteria femoral durante procedimientos de cateterización cardíaca. Se inserta en la arteria y se utiliza para guiar otros instrumentos quirúrgicos.',
-            'image' => 'imagen9.jpg',
+            'image' => 'Introductor_pequeno_Paso03.fbx',
             'steps' => implode(',', [8, 12]),
+            'modelo' => $introductorEncoded 
         ]);
 
         Herramienta::create([
             'nombre' => 'Valvula',
             'desc' => 'La válvula es un dispositivo utilizado en la cirugía cardíaca para reemplazar o reparar una válvula cardíaca dañada. Pueden ser biológicas o mecánicas y se colocan en el corazón para regular el flujo sanguíneo.',
-            'image' => 'Válvula.fbx',
+            'image' => 'valvula.fbx',
             'steps' => implode(',', [13, 15, 17]),
+            'modelo' => $valvulaEncoded 
         ]);
 
         Herramienta::create([
@@ -94,15 +113,17 @@ class HerramientasTableSeeder extends Seeder
         Herramienta::create([
             'nombre' => 'Cateter Amplatz AL1',
             'desc' => 'El catéter amplatz AL1/AL2 es un dispositivo utilizado en la cirugía cardíaca para medir la presión en las cámaras del corazón. Se inserta a través de una incisión en la ingle y se dirige hacia el corazón.',
-            'image' => 'cateter_al1.png',
+            'image' => 'Insertor_grande_Paso10.fbx',
             'steps' => implode(',', [10,]),
+            'modelo' => $insertorGranEncoded 
         ]);
 
         Herramienta::create([
             'nombre' => 'Cateter Amplatz AL2',
             'desc' => 'El catéter amplatz AL1/AL2 es un dispositivo utilizado en la cirugía cardíaca para medir la presión en las cámaras del corazón. Se inserta a través de una incisión en la ingle y se dirige hacia el corazón.',
-            'image' => 'cateter_al1.jpg',
+            'image' => 'Aguja_guía_Paso01.fbx',
             'steps' => implode(',', [10,]),
+            'modelo' => $agujaEncoded 
         ]);
 
         Herramienta::create([
@@ -115,8 +136,10 @@ class HerramientasTableSeeder extends Seeder
         Herramienta::create([
             'nombre' => 'Introductor certitude',
             'desc' => ' Un dispositivo utilizado para la colocación de marcapasos. Se inserta en la vena subclavia y guía el electrodo del marcapasos hacia el corazón.',
-            'image' => 'certitude.png',
+            'image' => 'Presurizador.fbx',
             'steps' => implode(',', [12, 17]),
+            'modelo' => $presurizadorEncoded 
+            
         ]);
 
         Herramienta::create([
@@ -124,6 +147,7 @@ class HerramientasTableSeeder extends Seeder
             'desc' => 'Es un dispositivo médico utilizado para tratar estenosis, aneurismas y otras enfermedades vasculares. Consiste en un tubo flexible con un balón en la punta que se infla en el sitio de la obstrucción o el aneurisma para abrir el vaso sanguíneo o sellar el aneurisma.',
             'image' => 'Balón_Paso12.fbx',
             'steps' => implode(',', [13, 15, 17]),
+            'modelo' => $balonEncoded 
         ]);
     }
 }
