@@ -46,6 +46,7 @@ function Herramientas() {
   return herramientas.length === 0 ? (
     <p>Cargando...</p>
   ) : (
+    <div className="mx-auto contenedor" style={{height: '85vh', overflowY: 'auto' }}>
     <div className="row offset-1 pb-5 p-5">
       {herramientas.map((herramienta, index) => {
 
@@ -130,7 +131,7 @@ No tiene mucho misterio, le das click al ver detalles y te muestra el modal que 
         </Modal.Footer>
       </Modal>
     </div>
-
+    </div>
   );
 
 }
