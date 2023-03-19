@@ -54,7 +54,7 @@ const RutaAdmin = ({children}) => {
             <Route path="/equipo" element={<Equipo />} />
 
             <Route path="/usuarios" element={<RutaAdmin><ListarUsuarios /></RutaAdmin>} />
-            <Route path="/modelos3d" element={<RutaProtegida><HerramientasBusqueda/></RutaProtegida>}/>
+            <Route path="/modelos3d" element={<HerramientasBusqueda/>}/>
             <Route path="/herramientas" element={<RutaAdmin><ListarHerramientas /></RutaAdmin>} />
             <Route path="/crearHerramienta" element={<RutaAdmin><CrearHerramienta /></RutaAdmin>} />
           

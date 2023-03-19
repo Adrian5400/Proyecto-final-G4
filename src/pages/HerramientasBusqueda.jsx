@@ -141,7 +141,7 @@ No tiene mucho misterio, le das click al ver detalles y te muestra el modal que 
               {herramientaSeleccionada ? (
                 <>
                   <p>{herramientaSeleccionada.desc}</p>
-                  <p>{herramientaSeleccionada.steps}</p>
+                  <p>Se encuentra en los pasos {herramientaSeleccionada.steps} de la operación</p>
                 </>
               ) : (
                 <p>No se han seleccionado herramientas</p>

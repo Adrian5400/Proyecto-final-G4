@@ -107,6 +107,8 @@ if(usuarioPagina.admin){
         <Navbar.Brand className="col-sm-6 col-md-8 col-lg-9" >
           <span style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: "3em" }} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
           <span style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: "3em" }} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
+          <span style={{ color: activeLink === 'modelos3d' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('modelos3d'); goVistaHerramientas()}}>3D</span>
+
         </Navbar.Brand>
         <Nav className="ml-auto col-sm-6 col-md-4 col-lg-3 d-flex justify-content-evenly">
           <Nav.Link  className="mr-3" style={{ color: activeLink === 'register' ? '#b78700' : "var(--color5)", border: "1px solid var(--color5)", borderRadius: "5px", padding: "5px 10px" }} onClick={() => {changeActive('register'); goRegister()}}>Registrarse</Nav.Link>
