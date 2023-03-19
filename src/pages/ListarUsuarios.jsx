@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow,  Button } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
@@ -16,6 +16,7 @@ const theme= createTheme({
 
 function ListarUsuarios() {
   const [users, setUsers] = useState([]);
+  const tableRef = useRef(null);
 
   const fetchUsers = async () => {
     const response = await fetch('http://127.0.0.1:8000/api/users');
@@ -34,14 +35,17 @@ function ListarUsuarios() {
 
     const result = await response.json();
     console.log(result);
+    tableRef.current.scrollIntoView();
     document.getElementById('alerta').style.display = 'block';
-
+  
     setTimeout(() => {
         document.getElementById('alerta').style.display = 'none';
+        
       }, 5000);
 
       
     fetchUsers();
+    
   };
 
   return (
@@ -51,7 +55,7 @@ function ListarUsuarios() {
             <div>
             <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}>Se ha borrado el usuario con exito</Alert>
             <TableContainer >
-                <Table border="1px solid white">
+                <Table border="1px solid white" ref={tableRef}>
                 <TableHead>
                     <TableRow>
                     <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Nombre</TableCell>

@@ -76,6 +76,7 @@ function ListarHerramientas() {
                     <TableHead>
                         <TableRow>
                             <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Nombre</TableCell>
+                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Imagen</TableCell>
                             <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Acción</TableCell>
                         </TableRow>
                     </TableHead>
@@ -83,6 +84,9 @@ function ListarHerramientas() {
                         {herramientas.map(herramienta => (
                         <TableRow key={herramienta.id}>
                             <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{herramienta.nombre}</TableCell>
+                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>
+                                <img src={herramienta.image_url} alt={herramienta.nombre} style={{ maxWidth: '100px', maxHeight: '100px' }} />
+                            </TableCell>
                             <TableCell sx={{ color: theme.palette.blanco.color, border: '1px solid white' }}>
                                 <Button variant="contained" color="error" onClick={() => handleDeleteHerramienta(herramienta.id)}>Borrar</Button>
                             </TableCell>
