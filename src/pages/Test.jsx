@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button} from "react-bootstrap";
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import ModeloLoader from './../components/ModeloLoader';
-import Test2 from './../components/Test2';
+import Decodificador from './../components/Decodificador';
 import { Modal } from "react-bootstrap";
 
 export default function Test(){
@@ -38,7 +38,7 @@ return false;
     {herramientas.map(element => {
         if(extension(element.image_url)){
             console.log(element.nombre);
-          return <Test2 modelo={element.modelo}></Test2>
+          return <Decodificador modelo={element.modelo} />
         }else{
             return <img src={element.image_url} />
         }})}
