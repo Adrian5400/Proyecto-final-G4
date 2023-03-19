@@ -75,7 +75,7 @@ function Herramientas() {
 
   return (
     <div style={{ height: '85vh', overflowY: 'scroll' }}>
-      <h1 className='pb-3'>Herramientas</h1>
+     <h1 className='pb-3 pt-3 text-white text-center'>Herramientas</h1>
       <div className='contenedor card p-4' style={{ backgroundColor: "#4c595b" }}>
         <div className='row'>
           <input className='col-4 offset-1' type="text" placeholder='Introduce el nombre de la herramienta' value={busqueda} onChange={handleInputChange} />

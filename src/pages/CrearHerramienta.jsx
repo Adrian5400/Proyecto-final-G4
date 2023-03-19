@@ -196,6 +196,7 @@ function CrearHerramienta() {
                         onChange={handleChange}
                         sx={{  backgroundColor: 'blanco.color', marginBottom: '20px', padding:'10px', marginTop:'20px' }}
                     />
+                    
                     <label>Pasos, ej (1,4,5)</label>
                     <TextField
                       id="pasos"
