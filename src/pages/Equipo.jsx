@@ -45,9 +45,14 @@ const Equipo = () => {
           <Container style={{ backgroundColor: "var(--color1)", maxWidth: "100vw"}}>
         <div className="row">
             <div className="col-sm-12 text-center">
+           
                 <p className="mt-3" style={{ color: "var(--color5)" }}>
-                      ¡Conozca a nuestro equipo de cuatro programadores en formación! Somos apasionados por la codificación y siempre estamos ansiosos por aprender cosas nuevas. Juntos, estamos trabajando en la creación de una aplicación que creemos tiene un gran potencial, aunque es posible que no tenga un gran éxito. A pesar de esto, estamos decididos a utilizar este proyecto como una oportunidad para mejorar nuestras habilidades y adquirir una valiosa experiencia en equipo.
+                Nosotros, el equipo de desarrolladores junior de la clase de segundo de Grado Superior de Desarrollo de Aplicaciones Web del I.E.S. Monte Naranco, nos acercamos humildemente a ustedes, estimados miembros del I.E.S. Augusto González de Linares, con gran honor y privilegio mientras emprendemos nuestra misión de crear una aplicación innovadora y sofisticada. Entendemos la inmensa responsabilidad que conlleva tal tarea, y estamos ansiosos por enfrentarnos a tamaño desafío.
                 </p>
+                <p className="mt-3" style={{ color: "var(--color5)" }}>
+                Como equipo, hemos emprendido este viaje con el mayor compromiso y dedicación para entregar un producto de la más alta calidad. Entendemos que nuestro proyecto puede parecer ligeramente fuera de nuestro nivel de experiencia actual, pero les aseguramos que estamos a la altura de la tarea. Con su orientación y apoyo, estamos seguros de que podemos superar cualquier desafío que se presente en nuestro camino. Prometemos trabajar incansablemente y diligentemente para garantizar que nuestra aplicación cumpla con todos los requisitos técnicos y supere todas las expectativas. Les agradecemos la oportunidad de emprender este proyecto, y les prometemos hacer todo lo posible para entregar un resultado exitoso.
+                </p>
+
             </div>
             </div>
           </Container>

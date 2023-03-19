@@ -69,6 +69,7 @@ if(usuarioPagina.admin){
     <Navbar style={{ backgroundColor: "var(--color1)", position: "fixed", top: '0', width: "100%" }}>
       <Navbar.Brand className="col-sm-6 col-md-8 col-lg-8">
     <span className='spanAdmin' style={{ color: activeLink === 'inicio' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('inicio'); goHome();}}>Inicio</span>
+    <span style={{ color: activeLink === 'equipo' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: "3em" }} onClick={() => {changeActive('equipo'); goEquipo();}}>Equipo</span>
     <span className='spanAdmin' style={{ color: activeLink === 'modelos3d' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em`}} onClick={() => {changeActive('modelos3d'); goVistaHerramientas()}}>3D</span>
     <span className='spanAdmin' style={{ color: activeLink === 'pasos' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('pasos'); goPasos()}}>Pasos</span>
     <span className='spanAdmin' style={{ color: activeLink === 'usuarios' ? '#b78700' : "var(--color5)", cursor: "pointer", marginLeft: `${window.innerWidth < 768 ? '3' : '2'}em` }} onClick={() => {changeActive('usuarios'); goUsuarios()}}>Usuarios</span>

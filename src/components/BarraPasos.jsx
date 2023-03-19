@@ -7,7 +7,8 @@ import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 // import  StepIconProps  from "@mui/material/StepIcon";
-import Box from '@mui/material/Box';  
+import Box from '@mui/material/Box';
+import Decodificador from './Decodificador';  
 
 
 // import ContextoHerramientas from './InicioPasos'
@@ -35,7 +36,7 @@ const ColorlibStepLabel = styled(StepLabel)(() => ({
       color: "#94c973"
     },
     [`&.${stepLabelClasses.active}`]: {
-      color: "rgb(255, 255, 255, 0.9)"
+      color: '#b78700'
     },
 
     color: "rgb(255, 0, 64)	"
@@ -158,8 +159,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                
-                <img src={tarjetasPaso1[0].image_url} alt={tarjetasPaso1[0].nombre} border="0" />
+              {
+        tarjetasPaso1[0].modelo ? <div><Decodificador modelo={tarjetasPaso1[0].modelo} /></div>  :                  <img src={tarjetasPaso1[0].image_url} alt={tarjetasPaso1[0].nombre} border="0" />
+
+        }
               </div>
               <div className='col-md-6'>
                 <h1>Paso 1</h1>
@@ -180,7 +183,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso2[0].image_url} alt={tarjetasPaso2[0].nombre} border="0" />
+              {
+        tarjetasPaso2[0].modelo ? <div><Decodificador modelo={tarjetasPaso2[0].modelo} /></div>  : <img src={tarjetasPaso2[0].image_url} alt={tarjetasPaso2[0].nombre} border="0" />
+
+        }
               </div>
               <div className='col-md-6'>
                 <h1>Paso 2</h1>
@@ -201,7 +207,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso3[0].image_url} alt={tarjetasPaso3[0].nombre} border="0" />
+              {
+        tarjetasPaso3[0].modelo ? <div><Decodificador modelo={tarjetasPaso3[0].modelo} /></div> : <img src={tarjetasPaso3[0].image_url} alt={tarjetasPaso3[0].nombre} border="0" />
+
+        }
               </div>
               <div className='col-md-6'>
                 <h1>Paso 3</h1>
@@ -222,7 +231,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso4[0].image_url} alt={tarjetasPaso4[0].nombre} border="0" />
+              {
+        tarjetasPaso4[0].modelo ? <div><Decodificador modelo={tarjetasPaso4[0].modelo} /></div>  :<img src={tarjetasPaso4[0].image_url} alt={tarjetasPaso4[0].nombre} border="0" />
+
+        }
               </div>
               <div className='col-md-6'>
                 <h1>Paso 4</h1>
@@ -242,7 +254,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso5[0].image_url} alt={tarjetasPaso5[0].nombre} border="0" />
+              {
+        tarjetasPaso5[0].modelo ? <div><Decodificador modelo={tarjetasPaso5[0].modelo} /></div>  :<img src={tarjetasPaso5[0].image_url} alt={tarjetasPaso5[0].nombre} border="0" />
+
+        }
               </div>
               <div className='col-md-6'>
                 <h1>Paso 5</h1>
@@ -254,7 +269,10 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso5[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso5[1].image_url} alt={tarjetasPaso5[1].nombre} border="0" />
+              {
+        tarjetasPaso5[1].modelo ? <div><Decodificador modelo={tarjetasPaso5[1].modelo} /></div>  :<img src={tarjetasPaso5[1].image_url} alt={tarjetasPaso5[1].nombre} border="0" />
+
+        }
               </div>
             </div>
          
@@ -272,7 +290,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso6[0].image_url} alt={tarjetasPaso6[0].nombre} border="0" />
+              {
+        tarjetasPaso6[0].modelo ? <div><Decodificador modelo={tarjetasPaso6[0].modelo} /></div>  :<img src={tarjetasPaso6[0].image_url} alt={tarjetasPaso6[0].nombre} border="0" />
+
+        }
               </div>
               <div className='col-md-6'>
                 <h1>Paso 6</h1>
@@ -284,7 +305,10 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso6[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso6[1].image_url} alt={tarjetasPaso6[1].nombre} border="0" />
+              {
+        tarjetasPaso6[1].modelo ? <div><Decodificador modelo={tarjetasPaso6[1].modelo} /></div>  :<img src={tarjetasPaso6[1].image_url} alt={tarjetasPaso6[1].nombre} border="0" />
+
+        }
               </div>
             </div>
            
@@ -301,8 +325,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso7[0].image_url} alt={tarjetasPaso7[0].nombre} border="0" />
-              </div>
+              {
+        tarjetasPaso7[0].modelo ? <div><Decodificador modelo={tarjetasPaso7[0].modelo} /></div>  :<img src={tarjetasPaso7[0].image_url} alt={tarjetasPaso7[0].nombre} border="0" />
+
+        }              </div>
               <div className='col-md-6'>
                 <h1>Paso 7</h1>
                 <p>{tarjetasPaso7[0].desc}</p>
@@ -320,7 +346,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso8[0].image_url} alt={tarjetasPaso8[0].nombre} border="0" />
+              {
+        tarjetasPaso8[0].modelo ? <div><Decodificador modelo={tarjetasPaso8[0].modelo} /></div>  :<img src={tarjetasPaso8[0].image_url} alt={tarjetasPaso8[0].nombre} border="0" />
+
+        }  
               </div>
               <div className='col-md-6'>
                 <h1>Paso 8</h1>
@@ -332,7 +361,10 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso8[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso8[1].image_url} alt={tarjetasPaso8[1].nombre} border="0" />
+              {
+        tarjetasPaso8[1].modelo ? <div><Decodificador modelo={tarjetasPaso8[1].modelo} /></div>  :<img src={tarjetasPaso8[1].image_url} alt={tarjetasPaso8[1].nombre} border="0" />
+
+        }  
               </div>
             </div>
           </div>
@@ -347,8 +379,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso9[0].image_url} alt={tarjetasPaso9[0].nombre} border="0" />
-              </div>
+              {
+        tarjetasPaso9[0].modelo ? <div><Decodificador modelo={tarjetasPaso9[0].modelo} /></div>  :<img src={tarjetasPaso9[0].image_url} alt={tarjetasPaso9[0].nombre} border="0" />
+
+        }               </div>
               <div className='col-md-6'>
                 <h1>Paso 9</h1>
                 <p>{tarjetasPaso9[0].desc}</p>
@@ -367,8 +401,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso10[0].image_url} alt={tarjetasPaso10[0].nombre} border="0" />
-              </div>
+              {
+        tarjetasPaso10[0].modelo ? <div><Decodificador modelo={tarjetasPaso10[0].modelo} /></div>  :<img src={tarjetasPaso10[0].image_url} alt={tarjetasPaso10[0].nombre} border="0" />
+
+        }                 </div>
               <div className='col-md-6'>
                 <h1>Paso 10</h1>
                 <p>{tarjetasPaso10[0].desc} </p>
@@ -379,8 +415,10 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso10[1].desc} </p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso10[1].image_url} alt={tarjetasPaso10[0].nombre} border="0" />
-              </div>
+              {
+        tarjetasPaso10[1].modelo ? <div><Decodificador modelo={tarjetasPaso10[1].modelo} /></div>  :<img src={tarjetasPaso10[1].image_url} alt={tarjetasPaso10[1].nombre} border="0" />
+
+        }                </div>
             </div>
 
           </div>
@@ -395,7 +433,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso11[0].image_url} alt={tarjetasPaso11[0].nombre} border="0" />
+              {
+        tarjetasPaso11[0].modelo ? <div><Decodificador modelo={tarjetasPaso11[0].modelo} /></div>  :<img src={tarjetasPaso11[0].image_url} alt={tarjetasPaso11[0].nombre} border="0" />
+
+        }  
               </div>
               <div className='col-md-6'>
                 <h1>Paso 11</h1>
@@ -407,12 +448,18 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso11[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso11[1].image_url} alt={tarjetasPaso11[1].nombre} border="0" />
+              {
+        tarjetasPaso11[1].modelo ? <div><Decodificador modelo={tarjetasPaso11[1].modelo} /></div>  :<img src={tarjetasPaso11[1].image_url} alt={tarjetasPaso11[1].nombre} border="0" />
+
+        }  
               </div>
             </div>
             <div className='row mt-4'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso11[2].image_url} alt={tarjetasPaso11[2].nombre} border="0" />
+              {
+        tarjetasPaso11[2].modelo ? <div><Decodificador modelo={tarjetasPaso11[2].modelo} /></div>  :<img src={tarjetasPaso11[2].image_url} alt={tarjetasPaso11[2].nombre} border="0" />
+
+        }  
               </div>
               <div className='col-md-6'>
                 <p>{tarjetasPaso11[2].desc}</p>
@@ -430,7 +477,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso12[0].image_url} alt={tarjetasPaso12[0].nombre} border="0" />
+              {
+        tarjetasPaso12[0].modelo ? <div><Decodificador modelo={tarjetasPaso12[0].modelo} /></div>  :<img src={tarjetasPaso12[0].image_url} alt={tarjetasPaso12[0].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <h1>Paso 12</h1>
@@ -442,7 +492,10 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso12[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso12[1].image_url} alt={tarjetasPaso12[1].nombre} border="0" />
+              {
+        tarjetasPaso12[1].modelo ? <div><Decodificador modelo={tarjetasPaso12[1].modelo} /></div>  :<img src={tarjetasPaso12[1].image_url} alt={tarjetasPaso12[1].nombre} border="0" />
+
+        } 
               </div>
             </div>
           </div>
@@ -457,7 +510,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso13[0].image_url} alt={tarjetasPaso13[0].nombre} border="0" />
+              {
+        tarjetasPaso13[0].modelo ? <div><Decodificador modelo={tarjetasPaso13[0].modelo} /></div>  :<img src={tarjetasPaso13[0].image_url} alt={tarjetasPaso13[0].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <h1>Paso 13</h1>
@@ -469,12 +525,18 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso13[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso13[1].image_url} alt={tarjetasPaso13[1].nombre} border="0" />
+              {
+        tarjetasPaso13[1].modelo ? <div><Decodificador modelo={tarjetasPaso13[1].modelo} /></div>  :<img src={tarjetasPaso13[1].image_url} alt={tarjetasPaso13[1].nombre} border="0" />
+
+        } 
               </div>
             </div>
             <div className='row mt-4'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso13[2].image_url} alt={tarjetasPaso13[2].nombre} border="0" />
+              {
+        tarjetasPaso13[2].modelo ? <div><Decodificador modelo={tarjetasPaso13[2].modelo} /></div>  :<img src={tarjetasPaso13[2].image_url} alt={tarjetasPaso13[2].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <p>{tarjetasPaso13[2].desc}</p>
@@ -492,7 +554,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso14[0].image_url} alt={tarjetasPaso14[0].nombre} border="0" />
+              {
+        tarjetasPaso14[0].modelo ? <div><Decodificador modelo={tarjetasPaso14[0].modelo} /></div>  :<img src={tarjetasPaso14[0].image_url} alt={tarjetasPaso14[0].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <h1>Paso 14</h1>
@@ -511,7 +576,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso15[0].image_url} alt={tarjetasPaso15[0].nombre} border="0" />
+              {
+        tarjetasPaso15[0].modelo ? <div><Decodificador modelo={tarjetasPaso15[0].modelo} /></div>  :<img src={tarjetasPaso15[0].image_url} alt={tarjetasPaso15[0].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <h1>Paso 15</h1>
@@ -523,7 +591,10 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso15[1].desc} </p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso15[1].image_url} alt={tarjetasPaso15[1].nombre} border="0" />
+              {
+        tarjetasPaso15[1].modelo ? <div><Decodificador modelo={tarjetasPaso15[1].modelo} /></div>  :<img src={tarjetasPaso15[1].image_url} alt={tarjetasPaso15[1].nombre} border="0" />
+
+        } 
               </div>
             </div>
           </div>
@@ -538,7 +609,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso16[0].image_url} alt={tarjetasPaso16[0].nombre} border="0" />
+              {
+        tarjetasPaso16[0].modelo ? <div><Decodificador modelo={tarjetasPaso16[0].modelo} /></div>  :<img src={tarjetasPaso16[0].image_url} alt={tarjetasPaso16[0].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <h1>Paso 16</h1>
@@ -557,7 +631,10 @@ for (let i = 1; i <= 17; i++) {
           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
             <div className='row'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso17[0].image_url} alt={tarjetasPaso17[0].nombre} border="0" />
+              {
+        tarjetasPaso17[0].modelo ? <div><Decodificador modelo={tarjetasPaso17[0].modelo} /></div>  :<img src={tarjetasPaso17[0].image_url} alt={tarjetasPaso17[0].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <h1>Paso 17</h1>
@@ -569,12 +646,18 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso17[1].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso17[1].image_url} alt={tarjetasPaso17[1].nombre} border="0" />
+              {
+        tarjetasPaso17[1].modelo ? <div><Decodificador modelo={tarjetasPaso17[1].modelo} /></div>  :<img src={tarjetasPaso17[1].image_url} alt={tarjetasPaso17[1].nombre} border="0" />
+
+        } 
               </div>
             </div>
             <div className='row mt-4'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso17[2].image_url} alt={tarjetasPaso17[2].nombre} border="0" />
+              {
+        tarjetasPaso17[2].modelo ? <div><Decodificador modelo={tarjetasPaso17[2].modelo} /></div>  :<img src={tarjetasPaso17[2].image_url} alt={tarjetasPaso17[2].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <p>{tarjetasPaso17[2].desc}</p>
@@ -585,12 +668,18 @@ for (let i = 1; i <= 17; i++) {
                 <p>{tarjetasPaso17[3].desc}</p>
               </div>
               <div className='col-md-6'>
-                <img src={tarjetasPaso17[3].image_url} alt={tarjetasPaso17[3].nombre} border="0" />
+              {
+        tarjetasPaso17[3].modelo ? <div><Decodificador modelo={tarjetasPaso17[3].modelo} /></div>  :<img src={tarjetasPaso17[3].image_url} alt={tarjetasPaso17[3].nombre} border="0" />
+
+        } 
               </div>
             </div>
             <div className='row mt-4'>
               <div className='col-md-6'>
-                <img src={tarjetasPaso17[4].image_url} alt={tarjetasPaso17[4].nombre} border="0" />
+              {
+        tarjetasPaso17[4].modelo ? <div><Decodificador modelo={tarjetasPaso17[4].modelo} /></div>  :<img src={tarjetasPaso17[4].image_url} alt={tarjetasPaso17[4].nombre} border="0" />
+
+        } 
               </div>
               <div className='col-md-6'>
                 <p>{tarjetasPaso17[4].desc}</p>
