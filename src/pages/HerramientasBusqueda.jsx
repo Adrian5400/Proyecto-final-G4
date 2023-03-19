@@ -2,16 +2,28 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import './css/herramientas.css';
-import ModeloLoader from "../components/ModeloLoader";
+
 import { Modal, Button } from "react-bootstrap";
+import Decodificador from "../components/Decodificador";
 
 
 function Herramientas() {
 
   const [herramientas, setHerramientas] = useState([]);
   const [herramientasCompletas, setHerramientasCompletas] = useState([]);
-  const [detalles, setDetalles] = useState({});
+  const [mostrarModal, setMostrarModal] = useState(false);
   const [busqueda, setBusqueda] = useState('');
+
+  // Con esto, selecciono la herramienta que quiero mostrar en el modal
+  const [herramientaSeleccionada, setHerramientaSeleccionada] = useState(null);
+
+  const abrirModal = (herramienta) => {
+    setHerramientaSeleccionada(herramienta);
+    setMostrarModal(true);
+    console.log(herramienta);
+  };
+
+
 
   function handleInputChange(event) {
     setBusqueda(event.target.value);
@@ -36,33 +48,6 @@ function Herramientas() {
     }
   }
 
-  function mostrarDetalles(id, texto) {
-    setDetalles(prevState => {
-      const newDetalles = { ...prevState };
-      if (newDetalles[id]) {
-        delete newDetalles[id];
-      } else {
-        newDetalles[id] = texto;
-      }
-      return newDetalles;
-    });
-    if (document.querySelector(`#mostrar${id}`).innerHTML == "Ocultar detalles") {
-      setDetalles(prevState => ({
-        ...prevState,
-        [id]: ''
-      }));
-      document.querySelector(`#separador${id}`).className = "";
-      document.querySelector(`#mostrar${id}`).innerHTML = "Mostrar detalles";
-    } else {
-      setDetalles(prevState => ({
-        ...prevState,
-        [id]: texto
-      }));
-      document.querySelector(`#separador${id}`).className = "separador";
-      document.querySelector(`#mostrar${id}`).innerHTML = "Ocultar detalles";
-    }
-  }
-
   useEffect(() => {
     const fetchHerramientas = async () => {
       const response = await fetch('http://127.0.0.1:8000/api/herramientas');
@@ -80,7 +65,7 @@ function Herramientas() {
 
   return (
     <div style={{ height: '85vh', overflowY: 'scroll' }}>
-     <h1 className='pb-3 pt-3 text-white text-center'>Herramientas</h1>
+      <h1 className='pb-3 pt-3 text-white text-center'>Herramientas</h1>
       <div className='contenedor card p-4' style={{ backgroundColor: "#4c595b" }}>
         <div className='row'>
           <input className='col-4 offset-1' type="text" placeholder='Introduce el nombre de la herramienta' value={busqueda} onChange={handleInputChange} />
@@ -106,22 +91,68 @@ function Herramientas() {
             <option>17</option>
           </select>
         </div>
-        <div className='row offset-1 pb-5 p-5'>
+        <div className='row offset-1 pb-5 p-5' style={{ justifyContent: 'center' }}>
           {herramientas.map((herramienta, index) => (
-            <div key={herramienta.id} className='col-md-6 pb-5'>
-              <div id={herramienta.id} className="cuerpo card" style={{ width: '350px' }}>
-                <img src={herramienta.image_url} onError={(e) => { e.target.onerror = null; e.target.src = "https://www.hostingplus.com.es/wp-content/uploads/2020/02/error.jpg" }} className="imagen card-img-top offset-3" width="170" height="350" style={{ width: '170px', height: '350px' }}></img>
+           <div key={herramienta.id} className='col-md-6 pb-5'>
+           <div id={herramienta.id} className="cuerpo card" style={{ width: '350px' }}>
+             {herramienta.modelo ? (
+               <div style={{ width: '350px', height: '250px', display: 'flex' }}>
+                 <Decodificador modelo={herramienta.modelo} className="Decodificador" />
+               </div>
+             ) : (
+              <div style={{ width: '340px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img
+                src={herramienta.image_url}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = 'https://www.hostingplus.com.es/wp-content/uploads/2020/02/error.jpg';
+                }}
+                className="imagen card-img-top"
+                style={{ maxWidth: '100%', maxHeight: '100%' }}
+                alt={herramienta.nombre}
+              />
+            </div>
+                )}
                 <div className="card-body">
                   <h4 className="card-title">{herramienta.nombre}</h4>
                   <p className="card-text">Pasos en los que se usa: {herramienta.steps}</p>
-                  <p id={`mostrar${herramienta.id}`} className="muestra" onClick={() => mostrarDetalles(`${herramienta.id}`, `${herramienta.desc}`)}>Mostrar detalles</p>
+                  <button
+                    className="btn btn-primary"
+                    //Aquí le pasas la herramienta a la función abrirModal del codigo de arriba
+                    onClick={() => abrirModal(herramienta)}
+
+
+                  >
+                    Ver detalles
+                  </button>
+
                 </div>
-                <div id={`separador${herramienta.id}`}></div>
-                {detalles[herramienta.id] && <h6>{detalles[herramienta.id]}</h6>}
               </div>
-              {index % 2 !== herramientas.length - 1 && <div className="w-100"></div>}
             </div>
           ))}
+          {/* Ver detalles lo cambié a un modal.
+No tiene mucho misterio, le das click al ver detalles y te muestra el modal que coge los datos del herramientaSeleccionada. */}
+
+          <Modal show={mostrarModal} onHide={() => setMostrarModal(false)}>
+            <Modal.Header closeButton>
+              <Modal.Title>{herramientaSeleccionada ? herramientaSeleccionada.nombre : ""}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {herramientaSeleccionada ? (
+                <>
+                  <p>{herramientaSeleccionada.desc}</p>
+                  <p>{herramientaSeleccionada.steps}</p>
+                </>
+              ) : (
+                <p>No se han seleccionado herramientas</p>
+              )}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => setMostrarModal(false)}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
     </div>
