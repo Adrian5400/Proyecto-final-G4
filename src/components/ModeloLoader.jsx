@@ -9,7 +9,7 @@ export default function ModeloLoader({ path }) {
   const url = `${path}#${fileName}` // append file name to blob URL
   console.log(url)
   return (
-    <div style={{height: "50vh", width: "50vw"}}>
+    <div style={{height: "100%", width: "100%"}}>
     <Canvas camera={{ position: [0, 0, 13], fov: 50 }} style={{backgroundColor: "white"}}>
       <directionalLight position={[10, 10, 5]} intensity={1.5} />
       <Suspense fallback={null}>

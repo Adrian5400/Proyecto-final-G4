@@ -2,7 +2,7 @@ import React from "react";
 import ModeloLoader from "./ModeloLoader";
 import { Buffer } from 'buffer';
 
-export default function Test2({modelo}) {
+export default function Decodificador({modelo}) {
   const [fbxUrl, setFbxUrl] = React.useState(null);
 
   React.useEffect(() => {

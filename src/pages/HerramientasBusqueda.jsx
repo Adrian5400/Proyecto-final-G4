@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './css/herramientas.css';
+// import './css/herramientas.css';
 import ModeloLoader from "../components/ModeloLoader";
 import { Modal, Button } from "react-bootstrap";
 

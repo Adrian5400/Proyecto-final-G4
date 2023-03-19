@@ -2,6 +2,7 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import ZonaPasos from './BarraPasos';
+import Decodificador from './Decodificador';
 
 export const ContextoHerramientas = createContext();
 
@@ -26,11 +27,14 @@ function Inicio() {
   console.log(tarjetas);
 
   function Tarjeta(props) {
-    const { nombre, desc, image_url, steps } = props;
+    const { nombre, desc, image_url, steps, modelo } = props;
 
     return (
       <Card sx={{ maxWidth: '15em', margin: '1.8rem', marginTop: '3rem' }}>
-        <CardMedia component='img' image={image_url} alt={nombre} sx={{ height: '14em' }} onError={(e) => { e.target.onerror = null; e.target.src = placeholderImage }} />
+
+        {modelo ? <div><Decodificador modelo={modelo} /></div>  : 
+  
+        <CardMedia component='img' image={image_url} alt={nombre} sx={{ height: '14em' }} onError={(e) => { e.target.onerror = null; e.target.src = placeholderImage }} /> }
         <CardContent>
           <Typography gutterBottom variant='h5' component='div' sx={{ fontWeight: 'bold' }}>
             {nombre}
@@ -62,7 +66,7 @@ function Inicio() {
             </div>
             </div>
             
-            <div className='col-12' style={{ height: '85vh', marginLeft: '2rem', marginRight: '2rem'}}>
+            <div className='col-12' style={{ height: '85vh', marginLeft: '2rem', marginRight: '2rem', overflow: 'scroll'}}>
               <div className='d-flex flex-wrap'>
                 {tarjetas.map((tarjeta) => (
                   <Tarjeta key={tarjeta.id} {...tarjeta} />
