@@ -1,19 +1,18 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext} from 'react';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import ZonaPasos from './BarraPasos';
 import Decodificador from './Decodificador';
+import { useNavigate } from 'react-router-dom';
 
 export const ContextoHerramientas = createContext();
 
 function Inicio() {
-  const [mostrarPasos, setMostrarPasos] = useState(false);
+  const navigate = useNavigate();
   const [tarjetas, setTarjetas] = useState([]);
   const placeholderImage = 'https://www.kindpng.com/picc/m/500-5007843_nursing-clipart-scissors-surgeon-clipart-hd-png-download.png'
+  const goPrep = () => navigate("/pasosPrep", { replace: true, state:{tarjetas} });
+  const goCirujia = () => navigate("/pasosCirujia", { replace: true, state:{tarjetas} });
 
-  const handleSiguienteClick = () => {
-    setMostrarPasos(true);
-  };
 
   useEffect(() => {
     async function getHerramientas() {
@@ -53,15 +52,18 @@ function Inicio() {
   return (
     <ContextoHerramientas.Provider value={{ tarjetas }}>
       <div style={{ backgroundColor: 'var(--color2)', height: '85vh' }}>
-        {!mostrarPasos && (
           <div className='container'>
   <div style={{ backgroundColor: 'var(--color1)'}}>
                 <h1 style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '1.5rem', color: 'var(--color5)'}}>¿Dispones de todas estas herramientas?</h1>
-              
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem'}}>
+                <Button variant='contained' color='primary' onClick={()=>{goPrep()}} style={{ backgroundColor: 'var(--color3)', marginBottom: '1rem', fontFamily: 'monaco'}}>
+                Preparacion para cirujía
+              </Button>
+                  </div>
             
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem'}}>
-              <Button variant='contained' color='primary' onClick={handleSiguienteClick} style={{ backgroundColor: 'var(--color3)', marginBottom: '1rem'}}>
-                Siguiente
+              <Button variant='contained' color='primary' onClick={()=>{goCirujia()}} style={{ backgroundColor: 'var(--color3)', marginBottom: '1rem', fontFamily: 'monaco'}}>
+                Proceder a operar
               </Button>
             </div>
             </div>
@@ -77,9 +79,6 @@ function Inicio() {
           
           </div>
 
-
-        )}
-        {mostrarPasos && <ZonaPasos tarjetas={tarjetas} />}
       </div>
 
     </ContextoHerramientas.Provider>
