@@ -17,6 +17,9 @@ function HerramientasBusqueda() {
     const herramientasFiltradas = herramientas.filter((herramienta) => {
       return herramienta.nombre.toLowerCase().includes(busqueda.toLowerCase());
     });
+    if (herramientasFiltradas.length === 0) {
+      alert("No se encontraron herramientas con los filtros aplicados.");
+    }
     setHerramientas(herramientasFiltradas);
   }
 
