@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Herramienta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HerramientaController extends Controller
 {
@@ -43,9 +44,13 @@ class HerramientaController extends Controller
         $herramienta = new Herramienta;
         $herramienta->nombre = $request->nombre;
         $herramienta->desc = $request->desc;
-        $herramienta->image = $request->file('image')->store('public/herramientas');
-
+        $herramienta->image = $request->file('image')->storeAs('public', $request->file('image')->getClientOriginalName());
+    
         $herramienta->steps = $request->steps;
         $herramienta->save();
+
+        
     }
+
+    
 }
