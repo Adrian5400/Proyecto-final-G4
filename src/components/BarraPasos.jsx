@@ -96,6 +96,7 @@ for (let i = 1; i <= 17; i++) {
     }
   }
 
+
   function getPasoContenido(step) {
    if (pasosOperacion.length > 0) {
      switch (step) {
