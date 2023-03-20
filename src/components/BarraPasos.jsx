@@ -6,21 +6,19 @@ import StepLabel, { stepLabelClasses } from "@mui/material/StepLabel";
 import StepContent from '@mui/material/StepContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import  StepIconProps  from "@mui/material/StepIcon";
 import Box from '@mui/material/Box';
 import Decodificador from './Decodificador';  
-
-
-// import ContextoHerramientas from './InicioPasos'
+import { useLocation } from 'react-router-dom';
 import "./css/pasos.css";
 
 
-function ZonaPasos({ tarjetas }) {
+function ZonaPasos() {
   
   const [pasosOperacion, setPasosOperacion] = React.useState([]);
   const [pasoActual, setPaso] = React.useState(0);
   const pasos = getPasos();
-  
+  const { state } = useLocation();
+  const { tarjetas } = state || {};
   React.useEffect(() => {
     async function getPasosOperacion() {
       let lista = await fetch('http://127.0.0.1:8000/api/pasos');
@@ -85,7 +83,6 @@ for (let i = 1; i <= 17; i++) {
   );
 }
 
-  // var { tarjetas } = React.useContext(ContextoHerramientas);
   function getPasos() {
     if (pasosOperacion.length > 0) {
       return [pasosOperacion[0].titulo, pasosOperacion[1].titulo, pasosOperacion[2].titulo,
@@ -709,14 +706,14 @@ for (let i = 1; i <= 17; i++) {
 
   return (
 
-    <Box sx={{ display: 'flex', alignItems: 'flex-start', width: '100%', marginTop: '2em' }}>
+    <Box sx={{ display: 'flex', alignItems: 'flex-start', width: '100%', marginTop: '2em', height: '90vh', overflowY: 'scroll' }}>
       <Box sx={{ width: '50%', mr: 2 }}>
         <Stepper activeStep={pasoActual} orientation="vertical">
           {pasos.map((label, index) => (
             <Step key={label}>
               <ColorlibStepLabel StepIconComponent={ColorlibStepIcon}>{label}</ColorlibStepLabel>
               <StepContent>
-                <Typography style={{ color: 'gold' }}>{getPasoContenido(index)}</Typography>
+                <Typography style={{ color: 'gold', fontFamily: 'lucida console' }}>{getPasoContenido(index)}</Typography>
 
                 <Box sx={{ mb: 2 }}>
                   <div>
@@ -724,7 +721,7 @@ for (let i = 1; i <= 17; i++) {
                       variant="contained"
                       onClick={Atras}
                       sx={{ mt: 1, mr: 1 }}
-                      style={{ backgroundColor: 'var(--color5)', color: 'var(--color1)' }}
+                      style={{ backgroundColor: 'var(--color5)', color: 'var(--color1)', fontFamily: 'monaco' }}
                     >
                       Atrás
                     </Button>
@@ -732,7 +729,7 @@ for (let i = 1; i <= 17; i++) {
                       variant="contained"
                       sx={{ mt: 1, mr: 1 }}
                       onClick={Siguiente}
-                      style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)' }}
+                      style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', fontFamily: 'monaco' }}
                     >
                       {index === pasos.length - 1 ? 'Terminar' : 'Siguiente'}
                     </Button>
