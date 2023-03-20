@@ -107,6 +107,10 @@ function CrearHerramienta() {
       setSeverity('error');
       document.getElementById('alerta').style.display = 'block';
 
+    }else if(herramienta.pasos <1 || herramienta.pasos >17){
+      setAlerta("Los pasos van de 1 a 17");
+      setSeverity('error');
+      document.getElementById('alerta').style.display = 'block';
     }else {
       document.getElementById('alerta').style.display = 'block';
       setSeverity('success');
@@ -115,7 +119,7 @@ function CrearHerramienta() {
       const formData = new FormData();
       formData.append('nombre', herramienta.nombre);
       formData.append('desc', herramienta.descripcion);
-      formData.append('image', event.target.imagen.files[0]);
+     formData.append('image', event.target.imagen.files[0], event.target.imagen.files[0].name);
       formData.append('steps', herramienta.pasos);
 
       const response = await fetch('http://127.0.0.1:8000/api/herramientas', {
@@ -126,7 +130,7 @@ function CrearHerramienta() {
 
     setTimeout(() => {
       document.getElementById('alerta').style.display = 'none';
-    }, 5000);
+    }, 3000);
     
   };
 

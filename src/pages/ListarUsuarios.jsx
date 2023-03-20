@@ -34,13 +34,12 @@ function ListarUsuarios() {
     });
 
     const result = await response.json();
-    console.log(result);
+    
     tableRef.current.scrollIntoView();
     document.getElementById('alerta').style.display = 'block';
   
     setTimeout(() => {
         document.getElementById('alerta').style.display = 'none';
-        
       }, 5000);
 
       
@@ -51,11 +50,11 @@ function ListarUsuarios() {
   return (
 <div style={{  height: '85vh', overflowY: 'scroll' }}>
     <ThemeProvider theme={theme}>
-        <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Grid container sx={{ display: 'flex', justifyContent: 'center' }}  ref={tableRef}>
             <div>
             <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}>Se ha borrado el usuario con exito</Alert>
             <TableContainer >
-                <Table border="1px solid white" ref={tableRef}>
+                <Table border="1px solid white" sx={{ marginBottom:'2em', marginTop: '2em' }}>
                 <TableHead>
                     <TableRow>
                     <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Nombre</TableCell>
