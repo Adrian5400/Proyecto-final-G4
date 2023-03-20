@@ -156,7 +156,7 @@ for (let i = 1; i <= 17; i++) {
         });
         console.log(tarjetasPaso1);
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+         <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -180,7 +180,7 @@ for (let i = 1; i <= 17; i++) {
         });
         console.log(tarjetasPaso2);
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -204,7 +204,7 @@ for (let i = 1; i <= 17; i++) {
         });
         console.log(tarjetasPaso3);
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -228,7 +228,7 @@ for (let i = 1; i <= 17; i++) {
         });
         console.log(tarjetasPaso4);
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -251,7 +251,7 @@ for (let i = 1; i <= 17; i++) {
         });
         console.log(tarjetasPaso5);
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -287,7 +287,7 @@ for (let i = 1; i <= 17; i++) {
         });
         console.log(tarjetasPaso6);
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -322,7 +322,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('7');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -343,7 +343,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('8');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -376,7 +376,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('9');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -398,7 +398,7 @@ for (let i = 1; i <= 17; i++) {
         });
         return (
           
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -430,7 +430,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('11');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -474,7 +474,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('12');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -507,7 +507,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('13');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -551,7 +551,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('14');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -573,7 +573,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('15');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -606,7 +606,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('16');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
@@ -628,7 +628,7 @@ for (let i = 1; i <= 17; i++) {
           return arreglo.includes('17');
         });
         return (
-          <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px' }}>
+           <div className='div3' style={{ backgroundColor: 'var(--color3)', color: 'var(--color5)', padding: '20px', position: 'fixed', maxWidth: '640px', height: '830px'}}>
             <div className='row'>
               <div className='col-md-6'>
               {
