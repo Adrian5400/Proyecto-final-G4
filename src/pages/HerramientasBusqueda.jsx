@@ -65,8 +65,13 @@ function Herramientas() {
 
   return (
     <div style={{ height: '85vh', overflowY: 'scroll' }}>
-      <h1 className='pb-3 pt-3 text-white text-center'>Herramientas</h1>
-      <div className='contenedor card p-4' style={{ backgroundColor: "#4c595b" }}>
+      <div className="container">
+        <div style={{ backgroundColor: 'var(--color1)' }}>
+          <h1 style={{ textAlign: 'center', paddingBottom: '0.5em', paddingTop: '0.5em', color: 'var(--color5)' }}>Herramientas</h1>
+        </div>
+      </div>
+
+      <div className='contenedor card p-4' style={{ backgroundColor: "#150f16" }}>
         <div className='row'>
           <input className='col-4 offset-1' type="text" placeholder='Introduce el nombre de la herramienta' value={busqueda} onChange={handleInputChange} />
           <button className='btn btn-primary col-1 offset-1' onClick={handleSearchClick}>Buscar</button>
@@ -93,29 +98,28 @@ function Herramientas() {
         </div>
         <div className='row offset-1 pb-5 p-5' style={{ justifyContent: 'center' }}>
           {herramientas.map((herramienta, index) => (
-           <div key={herramienta.id} className='col-md-6 pb-5'>
-           <div id={herramienta.id} className="cuerpo card" style={{ width: '350px' }}>
-             {herramienta.modelo ? (
-               <div style={{ width: '350px', height: '250px', display: 'flex' }}>
-                 <Decodificador modelo={herramienta.modelo} className="Decodificador" />
-               </div>
-             ) : (
-              <div style={{ width: '340px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <img
-                src={herramienta.image_url}
-                onError={(e) => {
-                  e.target.onerror = null;
-                  e.target.src = 'https://www.hostingplus.com.es/wp-content/uploads/2020/02/error.jpg';
-                }}
-                className="imagen card-img-top"
-                style={{ maxWidth: '100%', maxHeight: '100%' }}
-                alt={herramienta.nombre}
-              />
-            </div>
+            <div key={herramienta.id} className='col-md-6 pb-5'>
+              <div id={herramienta.id} className="cuerpo card" style={{ width: '350px' }}>
+                {herramienta.modelo ? (
+                  <div style={{ width: '350px', height: '250px', display: 'flex' }}>
+                    <Decodificador modelo={herramienta.modelo} className="Decodificador" />
+                  </div>
+                ) : (
+                  <div style={{ width: '340px', height: '250px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <img
+                      src={herramienta.image_url}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = 'https://www.hostingplus.com.es/wp-content/uploads/2020/02/error.jpg';
+                      }}
+                      className="imagen card-img-top"
+                      style={{ maxWidth: '100%', maxHeight: '100%' }}
+                      alt={herramienta.nombre}
+                    />
+                  </div>
                 )}
                 <div className="card-body">
                   <h4 className="card-title">{herramienta.nombre}</h4>
-                  <p className="card-text">Pasos en los que se usa: {herramienta.steps}</p>
                   <button
                     className="btn btn-primary"
                     //Aquí le pasas la herramienta a la función abrirModal del codigo de arriba
@@ -156,6 +160,7 @@ No tiene mucho misterio, le das click al ver detalles y te muestra el modal que 
         </div>
       </div>
     </div>
+
   )
 }
 export default Herramientas
