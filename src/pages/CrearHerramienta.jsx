@@ -5,7 +5,7 @@ import { TextField, Button, Card, CardContent, Grid, Input } from '@mui/material
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import Modal from '@mui/material/Modal';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 
 
 const theme= createTheme({
@@ -64,6 +64,8 @@ function CrearHerramienta() {
    
     
     return (
+   
+      
       <Modal sx={{ width: {xs: '100%', md: '27%'} , marginTop:{xs: '8em', md: '3.5em'}}} open={open} onClose={handleClose}>
          
          <Paper sx={{ maxHeight: {xs: '60vh', md: '80vh'}, overflow: 'auto', mx: 2, mt: 2 }}>
@@ -71,8 +73,8 @@ function CrearHerramienta() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>ID</TableCell>
-                    <TableCell>Descripción</TableCell>
+                    <TableCell><Typography style={{fontFamily: 'Verdana, sans-serif'}}>ID</Typography></TableCell>
+                    <TableCell><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Descripción</Typography></TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -87,6 +89,7 @@ function CrearHerramienta() {
             </TableContainer>
           </Paper>
       </Modal>
+
     );
   };
 

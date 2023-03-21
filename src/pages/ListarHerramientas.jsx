@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect , useRef} from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow,  Button } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow,  Button, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import { Alert } from '@mui/material';
@@ -77,30 +77,30 @@ function ListarHerramientas() {
         <ThemeProvider theme={theme}>
             <Grid container sx={{ display: 'flex', justifyContent: 'center' }} ref={tableRef}>
                 <div>
-                <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}>Se ha borrado la herramienta con exito</Alert>
+                <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Se ha borrado la herramienta con exito </Typography></Alert>
                     <Grid container justifyContent="center" sx={{ marginBottom: '20px', marginTop: '20px' }}>
-                        <Button variant="contained" color="primary" onClick={() => handleCreateHerramienta()}>Crear Herramienta</Button>
+                        <Button variant="contained" color="primary" onClick={() => handleCreateHerramienta()}><Typography style={{fontFamily: 'Monaco, monospace'}}>Crear Herramienta</Typography></Button>
                     </Grid>
                 <TableContainer >
                     <Table border="1px solid white" sx={{ marginBottom:'2em' }}>
                     <TableHead>
                         <TableRow>
-                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Nombre</TableCell>
-                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Imagen</TableCell>
-                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Acción</TableCell>
+                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Nombre</Typography></TableCell>
+                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Imagen</Typography></TableCell>
+                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Acción</Typography></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {herramientas.map(herramienta => (
                         <TableRow key={herramienta.id}>
-                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{herramienta.nombre}</TableCell>
+                            <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>{herramienta.nombre}</Typography></TableCell>
                             <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>
                             
                              <img src={ComparacionExtension(herramienta.image_url)} alt={herramienta.nombre} style={{ maxWidth: '100px', maxHeight: '100px' }} />
                             
                             </TableCell>
                             <TableCell sx={{ color: theme.palette.blanco.color, border: '1px solid white' }}>
-                                <Button variant="contained" color="error" onClick={() => handleDeleteHerramienta(herramienta.id)}>Borrar</Button>
+                                <Button variant="contained" color="error" onClick={() => handleDeleteHerramienta(herramienta.id)}><Typography style={{fontFamily: 'Monaco, monospace'}}>Borrar</Typography></Button>
                             </TableCell>
                         </TableRow>
                         ))}
