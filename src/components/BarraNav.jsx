@@ -58,7 +58,7 @@ const handleClose = () => {
       <Modal sx={{width:'100%' ,display: 'flex', alignItems: 'center', justifyContent: 'center'}} open={open} onClose={handleClose}>
         <Paper sx={{width:'30%', maxHeight: {xs: '60vh', md: '80vh'}, display: 'flex',flexDirection:'column', alignItems: 'center', paddingTop:3, paddingBottom:3, borderColor: 'grisClaro.color', borderWidth: '5px', borderStyle: 'solid', borderRadius: '10px'}}>
           <h2 style={{textAlign: 'center', margin: 0, paddingBottom:3}}>Tu sesión ha finalizado</h2>
-          <Button style={{marginTop:10}} variant="contained" color="error" onClick={goLogout}>Continuar</Button>
+          <Button style={{marginTop:15}} variant="contained" color="error" onClick={goLogout}>Continuar</Button>
         </Paper>
       </Modal>
     );

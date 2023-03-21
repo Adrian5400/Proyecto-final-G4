@@ -60,7 +60,7 @@ function ListarHerramientas() {
     const ComparacionExtension = (imagen) => {
         const extension = imagen.split('.').pop().toLowerCase();
         console.log(imagen);
-        if (extension==="jpg") {
+        if (extension!=="fbx") {
             return imagen;
         }else{
             return "https://www.kindpng.com/picc/m/500-5007843_nursing-clipart-scissors-surgeon-clipart-hd-png-download.png";
