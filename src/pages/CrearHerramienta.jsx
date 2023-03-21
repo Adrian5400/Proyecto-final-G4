@@ -80,8 +80,8 @@ function CrearHerramienta() {
                 <TableBody>
                   {pasos.map((paso) => (
                     <TableRow key={paso.id}>
-                      <TableCell>{paso.id}</TableCell>
-                      <TableCell>{paso.desc}</TableCell>
+                      <TableCell><Typography style={{fontFamily: 'Verdana, sans-serif'}}>{paso.id}</Typography></TableCell>
+                      <TableCell><Typography style={{fontFamily: 'Lucida sans, monospace'}}>{paso.desc}</Typography></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
