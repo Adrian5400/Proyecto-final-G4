@@ -70,64 +70,40 @@ function Herramientas() {
   return (
     <div style={{ height: '85vh', overflowY: 'scroll' }}>
       <div className="container">
-        <div style= {{ backgroundColor: 'var(--color1)' }}>
-          <h1 className="text-center py-2 text-light" style={{ fontFamily: 'Verdana, sans-serif' }}>Herramientas</h1>
+        <div style={{ backgroundColor: 'var(--color1)' }}>
+          <h1 style={{ textAlign: 'center', paddingBottom: '0.5em', paddingTop: '0.5em', color: 'var(--color5)', fontFamily: 'Verdana, sans-serif' }}>Herramientas</h1>
         </div>
       </div>
-  
-      <div className="container py-4" style={{ backgroundColor: '#150f16' }}>
-        <div className="row">
-          <div className="col-12 col-md-4 mb-3 mb-md-0">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Introduce el nombre de la herramienta"
-              value={busqueda}
-              onChange={handleInputChange}
-              style={{ fontFamily: 'Verdana, sans-serif' }}
-            />
-          </div>
-          <div className="col-12 col-md-2 mb-3 mb-md-0">
-            <button
-              className="btn btn-primary btn-block"
-              onClick={handleSearchClick}
-              style={{ fontFamily: 'Monaco, monospace' }}
-            >
-              BUSCAR
-            </button>
-          </div>
-          <div className="col-12 col-md-3">
-            <select
-              className="form-control"
-              onChange={handleSelectChange}
-              style={{ fontFamily: 'Verdana, sans-serif' }}
-            >
-              <option>Selecciona un paso</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
-              <option>13</option>
-              <option>14</option>
-              <option>15</option>
-              <option>16</option>
-              <option>17</option>
-            </select>
-          </div>
+
+      <div className='contenedor card p-4' style={{ backgroundColor: "#150f16" }}>
+        <div className='row'>
+          <input className='col-4 offset-1' type="text" placeholder='Introduce el nombre de la herramienta' value={busqueda} onChange={handleInputChange} style={{ fontFamily: 'Verdana, sans-serif' }} />
+          <button className='btn btn-primary col-1 offset-1' onClick={handleSearchClick} style={{fontFamily: 'Monaco, monospace'}}>BUSCAR</button>
+          <select className='col-3 offset-1' onChange={handleSelectChange} style={{fontFamily: 'Verdana, sans-serif'}}>
+            <option>Selecciona un paso</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+          </select>
         </div>
-  
-        <div className="row mt-4">
+        <div className='row offset-1 pb-5 p-5' style={{ justifyContent: 'center' }}>
           {herramientas.map((herramienta, index) => (
-            <div key={herramienta.id} className="col-12 col-md-6 mb-4">
-              <div id={herramienta.id} className="card" style={{ width: '350px' }}>
+           <div key={herramienta.id} className='col-md-6 pb-5' style={{ margin: '0 auto' }}>
+              <div id={herramienta.id} className="cuerpo card" style={{ width: '350px' }}>
                 {herramienta.modelo ? (
                   <div style={{ width: '350px', height: '250px', display: 'flex' }}>
                     <Decodificador modelo={herramienta.modelo} className="Decodificador" />
@@ -140,7 +116,7 @@ function Herramientas() {
                         e.target.onerror = null;
                         e.target.src = 'https://www.hostingplus.com.es/wp-content/uploads/2020/02/error.jpg';
                       }}
-                      className="card-img-top"
+                      className="imagen card-img-top"
                       style={{ maxWidth: '100%', maxHeight: '100%' }}
                       alt={herramienta.nombre}
                     />
