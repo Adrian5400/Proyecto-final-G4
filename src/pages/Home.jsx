@@ -39,13 +39,13 @@ function Home() {
     <div className="mx-auto contenedor container" style={{ backgroundColor: 'var(--color2)', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div className="row">
         <div className="col-md-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: "var(--color1)", padding: '4rem' }}>
-          <h1 className="pb-md-3" style={{ color: "var(--color5)", fontSize: "3rem", marginBottom: '1rem' }}>
+          <h1 className="pb-md-3" style={{ color: "var(--color5)", fontSize: "3rem", marginBottom: '1rem', fontFamily: 'Verdana, sans-serif' }}>
             CoRAzon Virtual
           </h1>
-          <p className="" style={{ color: "var(--color5)", fontSize: "1.2rem", lineHeight: '1.5', marginBottom: '1rem' }}>
+          <p className="" style={{ color: "var(--color5)", fontSize: "1.2rem", lineHeight: '1.5', marginBottom: '1rem', fontFamily: 'Verdana, sans-serif' }}>
             Bienvenido al simulador de Cateterismo (TAVR).
           </p>
-          <p className="" style={{ color: "var(--color5)", fontSize: "1.2rem", lineHeight: '1.5' }}>
+          <p className="" style={{ color: "var(--color5)", fontSize: "1.2rem", lineHeight: '1.5', fontFamily: 'Verdana, sans-serif' }}>
             Utiliza la barra de navegación para acceder a la base de datos de herramientas o para registrar tus credenciales y acceder a la zona de preparación de operaciones.
           </p>
           <Button
