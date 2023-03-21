@@ -1,11 +1,11 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useContext, useEffect, useState} from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useContext, useState} from 'react';
+import { createTheme } from '@mui/material/styles';
 import { Contexto } from './../App';
 import './css/navegacion.css';
 import Modal from '@mui/material/Modal';
-import {  Paper, Typography } from '@mui/material';
+import {  Paper } from '@mui/material';
 import Button from '@mui/material/Button';
 
 const theme= createTheme({

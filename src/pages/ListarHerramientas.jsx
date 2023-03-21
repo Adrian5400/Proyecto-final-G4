@@ -68,9 +68,6 @@ function ListarHerramientas() {
     };
    
 
-    
-    
-
 
     return (
     <div style={{  height: '85vh', overflowY: 'scroll' }}>

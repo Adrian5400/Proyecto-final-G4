@@ -6,25 +6,25 @@ export default function Decodificador({modelo}) {
   const [fbxUrl, setFbxUrl] = React.useState(null);
 
   React.useEffect(() => {
-    // Retrieve the base64-encoded .fbx file from the database
+    // Saca el archivo codificado de la base de datos
     const base64String = modelo;
-    // Decode the base64 string to obtain the original binary data of the .fbx file
+    // Lo desencripta, sacando el binario
    const binaryData = Buffer.from(base64String, 'base64');
    console.log(binaryData);
-    // Create a URL object from the binary data using URL.createObjectURL()
+    // Crea un objeto 'url' a partir del binario
     const url = URL.createObjectURL(
         new Blob([binaryData])    );
     setFbxUrl(url);
 
-    // Clean up the URL object when the component unmounts
+    // Cuando cierra el componente, quita ese objeto url.
     return () => {
       URL.revokeObjectURL(url);
     };
   }, []);
-
+//Al final de todo muestra 'loading' si todavia no acabo o pasa la url creada al componente que muestra los modelos.
   return (
     <div>
-      {fbxUrl ? <ModeloLoader path={fbxUrl} /> : <div>Loading...</div>}
+      {fbxUrl ? <ModeloLoader path={fbxUrl} /> : <div>Loading...</div>} 
     </div>
   );
 }
