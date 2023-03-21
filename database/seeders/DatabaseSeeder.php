@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         ]);
         $this->call([HerramientasTableSeeder::class]);
         $this->call([PasosSeeder::class]);
+        $this->call([PreparationsSeeder::class]);
     }
 }
