@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef} from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow,  Button } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow,  Button, Typography } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import { Alert } from '@mui/material';
@@ -52,24 +52,24 @@ function ListarUsuarios() {
     <ThemeProvider theme={theme}>
         <Grid container sx={{ display: 'flex', justifyContent: 'center' }}  ref={tableRef}>
             <div>
-            <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}>Se ha borrado el usuario con exito</Alert>
+            <Alert id="alerta" severity="success" sx={{ display: 'none', marginBottom: '20px', marginTop: '20px'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Se ha borrado el usuario con exito</Typography></Alert>
             <TableContainer >
                 <Table border="1px solid white" sx={{ marginBottom:'2em', marginTop: '2em' }}>
                 <TableHead>
                     <TableRow>
-                    <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Nombre</TableCell>
-                    <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Email</TableCell>
-                    <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>Acción</TableCell>
+                    <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Nombre</Typography></TableCell>
+                    <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Email</Typography></TableCell>
+                    <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>Acción</Typography></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {users.map(user => (
                     <TableRow key={user.email}>
-                        <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{user.name}</TableCell>
-                        <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}>{user.email}</TableCell>
+                        <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>{user.name}</Typography></TableCell>
+                        <TableCell sx={{color: theme.palette.blanco.color, border: '1px solid white'}}><Typography style={{fontFamily: 'Verdana, sans-serif'}}>{user.email}</Typography></TableCell>
                         <TableCell sx={{ color: theme.palette.blanco.color, border: '1px solid white' }}>
                           {user.email !== "test@example.com" &&
-                            <Button variant="contained" color="error" onClick={() => handleDeleteUser(user.email)}>Borrar</Button>
+                            <Button variant="contained" color="error" onClick={() => handleDeleteUser(user.email)}><Typography style={{fontFamily: 'Monaco, monospace'}}>Borrar</Typography></Button>
                           }
                         </TableCell>
                     </TableRow>
