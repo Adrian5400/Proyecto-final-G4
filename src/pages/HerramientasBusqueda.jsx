@@ -47,11 +47,13 @@ function Herramientas() {
       setHerramientas(herramientasCompletas);
     } else {
       const herramientasFiltradas = herramientasCompletas.filter((herramienta) => {
-        return herramienta.steps.indexOf(pasoSeleccionado) !== -1;
+        const pasosNumericos = herramienta.steps.split(",").map((paso) => Number(paso.trim()));
+        return pasosNumericos.includes(Number(pasoSeleccionado));
       });
       setHerramientas(herramientasFiltradas);
     }
   }
+
 
   useEffect(() => {
     const fetchHerramientas = async () => {
