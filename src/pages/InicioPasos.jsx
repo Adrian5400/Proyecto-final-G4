@@ -57,7 +57,7 @@ function Inicio() {
                 <h1 style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '1.5rem', color: 'var(--color5)'}}>¿Dispones de todas estas herramientas?</h1>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem'}}>
                 <Button variant='contained' color='primary' onClick={()=>{goPrep()}} style={{ backgroundColor: 'var(--color3)', marginBottom: '1rem', fontFamily: 'monaco'}}>
-                Preparacion para cirujía
+                Preparacion para cirugía
               </Button>
                   </div>
             

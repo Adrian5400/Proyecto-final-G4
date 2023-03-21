@@ -6,9 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 
 import { Contexto } from './../App';
-import augusto from './../img/augusto.png';
-import caixa from './../img/LaCaixa.png';
-import naranco from './../img/naranco.png';
+import revilla from './../img/revilla.jpg';
+import paciente from './../img/paciente.jpg';
+import paciente2 from './../img/paciente2.jpg';
+
+
 function Home() {
 
 
@@ -28,17 +30,19 @@ function Home() {
         imagenesContenedor.children[0].classList.remove("imagen-salida");
         imagenesContenedor.children[0].classList.add("imagen-entrada");
       });
-    }, 3000); 
+    }, 1800);
     return () => clearInterval(interval);
   }, []);
 
 
-  const imagenes = [augusto, caixa, naranco];
+
+
+  const imagenes = [paciente2, paciente, revilla];
 
   return (
     <div className="mx-auto contenedor container" style={{ backgroundColor: 'var(--color2)', borderRadius: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div className="row">
-        <div className="col-md-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: "var(--color1)", padding: '4rem' }}>
+        <div className="col-md-6" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', backgroundColor: "var(--color1)", padding: '4rem', maxHeight: '60vh'}}>
           <h1 className="pb-md-3" style={{ color: "var(--color5)", fontSize: "3rem", marginBottom: '1rem', fontFamily: 'Verdana, sans-serif' }}>
             CoRAzon Virtual
           </h1>
@@ -57,14 +61,22 @@ function Home() {
             Registrate
           </Button>
         </div>
-        <div className="col-md-6 mt-xs-5">
-          <div className="imagenes-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <img src={imagenes[imagenPosicion]} alt="imagen" className="imagen" style={{ width: '90%', height: '400px' }} />
-          </div>
+        <div className="col-md-6 mt-xs-5 d-flex justify-content-center align-items-center" style={{ backgroundColor: "var(--color1)", maxHeight: '60vh', marginRight: '0' }}>
+          <img
+            src={imagenes[imagenPosicion]}
+            alt="imagen"
+            className="imagen"
+            style={{ maxWidth: '100%', marginLeft: window.innerWidth > 576 && window.innerWidth < 768 ? '3rem' : '1.2rem', maxHeight: '60vh', height: window.innerWidth < 576 ? '30vh' : '70vh', width: window.innerWidth >= 768 && window.innerWidth < 992 ? '60vh' : '100%' }}
+          />
         </div>
       </div>
     </div>
   );
+
+
 }
+
+
+
 
 export default Home;

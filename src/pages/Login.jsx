@@ -76,9 +76,16 @@ const handleSubmit = async (event) => {
 
   return (
     <ThemeProvider theme={theme}>
-       <Grid id="contenedor" sx={{ display:'flex', justifyContent: 'center'}}>
-          <Card sx={{ backgroundColor: 'grisClaro.color',width:"45%"}}>
-            <CardContent sx={{ borderColor: 'blanco.color', borderWidth: '1px', borderStyle: 'solid' }}>
+      <Grid container justifyContent="center">
+        <Grid item xs={12} md={6} lg={4}>
+          <Card sx={{ backgroundColor: 'grisClaro.color' }}>
+            <CardContent
+              sx={{
+                borderColor: 'blanco.color',
+                borderWidth: '1px',
+                borderStyle: 'solid'
+              }}
+            >
               <form onSubmit={handleSubmit}>
                 <label>Email</label>
                 <TextField
@@ -91,7 +98,7 @@ const handleSubmit = async (event) => {
                   required
                   value={state.email}
                   onChange={handleInputChange}
-                  sx={{ backgroundColor: 'blanco.color',marginBottom: '20px' }}
+                  sx={{ backgroundColor: 'blanco.color', marginBottom: '20px' }}
                 />
                 <label>Contraseña</label>
                 <TextField
@@ -104,9 +111,15 @@ const handleSubmit = async (event) => {
                   required
                   value={state.password}
                   onChange={handleInputChange}
-                  sx={{  backgroundColor: 'blanco.color',marginBottom: '20px' }}
+                  sx={{ backgroundColor: 'blanco.color', marginBottom: '20px' }}
                 />
-                <Alert id="error" severity="error" sx={{ display: 'none', marginBottom: '20px'}}>{error}</Alert>
+                <Alert
+                  id="error"
+                  severity="error"
+                  sx={{ display: 'none', marginBottom: '20px' }}
+                >
+                  {error}
+                </Alert>
                 <Button
                   type="submit"
                   variant="contained"
@@ -118,6 +131,7 @@ const handleSubmit = async (event) => {
               </form>
             </CardContent>
           </Card>
+        </Grid>
       </Grid>
     </ThemeProvider>
   );
