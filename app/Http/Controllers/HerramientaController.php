@@ -44,11 +44,11 @@ class HerramientaController extends Controller
         $herramienta = new Herramienta;
         $herramienta->nombre = $request->nombre;
         $herramienta->desc = $request->desc;
-        $herramienta->image = $request->file('image')->storeAs('public', $request->file('image')->getClientOriginalName());
-    
+        $fileName = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public', $fileName);
+        $herramienta->image = $fileName;
         $herramienta->steps = $request->steps;
         $herramienta->save();
-
         
     }
 
