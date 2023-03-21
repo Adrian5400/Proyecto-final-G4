@@ -67,15 +67,15 @@ function Herramientas() {
     <div style={{ height: '85vh', overflowY: 'scroll' }}>
       <div className="container">
         <div style={{ backgroundColor: 'var(--color1)' }}>
-          <h1 style={{ textAlign: 'center', paddingBottom: '0.5em', paddingTop: '0.5em', color: 'var(--color5)' }}>Herramientas</h1>
+          <h1 style={{ textAlign: 'center', paddingBottom: '0.5em', paddingTop: '0.5em', color: 'var(--color5)', fontFamily: 'Verdana, sans-serif' }}>Herramientas</h1>
         </div>
       </div>
 
       <div className='contenedor card p-4' style={{ backgroundColor: "#150f16" }}>
         <div className='row'>
-          <input className='col-4 offset-1' type="text" placeholder='Introduce el nombre de la herramienta' value={busqueda} onChange={handleInputChange} />
-          <button className='btn btn-primary col-1 offset-1' onClick={handleSearchClick}>Buscar</button>
-          <select className='col-3 offset-1' onChange={handleSelectChange}>
+          <input className='col-4 offset-1' type="text" placeholder='Introduce el nombre de la herramienta' value={busqueda} onChange={handleInputChange} style={{ fontFamily: 'Verdana, sans-serif' }} />
+          <button className='btn btn-primary col-1 offset-1' onClick={handleSearchClick} style={{fontFamily: 'Monaco, monospace'}}>BUSCAR</button>
+          <select className='col-3 offset-1' onChange={handleSelectChange} style={{fontFamily: 'Verdana, sans-serif'}}>
             <option>Selecciona un paso</option>
             <option>1</option>
             <option>2</option>
@@ -119,15 +119,15 @@ function Herramientas() {
                   </div>
                 )}
                 <div className="card-body">
-                  <h4 className="card-title">{herramienta.nombre}</h4>
+                  <h4 className="card-title" style={{fontFamily: 'Verdana, sans-serif'}}>{herramienta.nombre}</h4>
                   <button
                     className="btn btn-primary"
                     //Aquí le pasas la herramienta a la función abrirModal del codigo de arriba
-                    onClick={() => abrirModal(herramienta)}
+                    onClick={() => abrirModal(herramienta)} style={{fontFamily: 'Monaco, monospace'}}
 
 
                   >
-                    Ver detalles
+                    VER DETALLES
                   </button>
 
                 </div>
@@ -139,21 +139,21 @@ No tiene mucho misterio, le das click al ver detalles y te muestra el modal que 
 
           <Modal show={mostrarModal} onHide={() => setMostrarModal(false)}>
             <Modal.Header closeButton>
-              <Modal.Title>{herramientaSeleccionada ? herramientaSeleccionada.nombre : ""}</Modal.Title>
+              <Modal.Title style={{fontFamily: 'Verdana, sans-serif'}}>{herramientaSeleccionada ? herramientaSeleccionada.nombre : ""}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               {herramientaSeleccionada ? (
                 <>
-                  <p>{herramientaSeleccionada.desc}</p>
-                  <p>Se encuentra en los pasos {herramientaSeleccionada.steps} de la operación</p>
+                  <p style={{fontFamily: 'Verdana, sans-serif'}}>{herramientaSeleccionada.desc}</p>
+                  <p style={{fontFamily: 'Verdana, sans-serif'}}>Se encuentra en los pasos {herramientaSeleccionada.steps} de la operación</p>
                 </>
               ) : (
-                <p>No se han seleccionado herramientas</p>
+                <p style={{fontFamily: 'Verdana, sans-serif'}}>No se han seleccionado herramientas</p>
               )}
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={() => setMostrarModal(false)}>
-                Cerrar
+              <Button variant="secondary" onClick={() => setMostrarModal(false)} style={{fontFamily: 'Monaco, monospace'}}>
+                CERRAR
               </Button>
             </Modal.Footer>
           </Modal>
