@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/pasos.css";
-import Inicio from "./../components/InicioPasos";
+import Inicio from "./InicioPasos";
 
 function Pasos() {
     return (

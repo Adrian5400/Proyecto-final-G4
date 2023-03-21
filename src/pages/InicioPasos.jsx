@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext} from 'react';
 import Button from '@mui/material/Button';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import Decodificador from './Decodificador';
+import Decodificador from '../components/Decodificador';
 import { useNavigate } from 'react-router-dom';
 
 export const ContextoHerramientas = createContext();

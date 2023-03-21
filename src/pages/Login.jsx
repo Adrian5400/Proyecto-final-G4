@@ -8,7 +8,6 @@ import { Contexto } from './../App';
 import { useNavigate } from "react-router-dom";
 
 
-
 const theme= createTheme({
   palette:{
     negro:{ color:"#000000"},
