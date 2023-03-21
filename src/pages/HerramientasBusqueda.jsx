@@ -13,6 +13,7 @@ function Herramientas() {
   const [herramientasCompletas, setHerramientasCompletas] = useState([]);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [busqueda, setBusqueda] = useState('');
+  const [mostrarError, setMostrarError] = useState(false);
 
   // Con esto, selecciono la herramienta que quiero mostrar en el modal
   const [herramientaSeleccionada, setHerramientaSeleccionada] = useState(null);
@@ -33,6 +34,10 @@ function Herramientas() {
     const herramientasFiltradas = herramientas.filter((herramienta) => {
       return herramienta.nombre.toLowerCase().includes(busqueda.toLowerCase());
     });
+
+    if(herramientasFiltradas.length === 0){
+      setMostrarError(true);
+    }
     setHerramientas(herramientasFiltradas);
   }
 
@@ -149,6 +154,27 @@ No tiene mucho misterio, le das click al ver detalles y te muestra el modal que 
                 </>
               ) : (
                 <p style={{fontFamily: 'Verdana, sans-serif'}}>No se han seleccionado herramientas</p>
+              )}
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => setMostrarModal(false)} style={{fontFamily: 'Monaco, monospace'}}>
+                CERRAR
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+
+          <Modal show={mostrarError} onHide={() => setMostrarError(false)}>
+            <Modal.Header closeButton>
+            </Modal.Header>
+            <Modal.Body>
+              {herramientaSeleccionada ? (
+                <>
+                  <p style={{fontFamily: 'Verdana, sans-serif'}}>{herramientaSeleccionada.desc}</p>
+                  <p style={{fontFamily: 'Verdana, sans-serif'}}>Se encuentra en los pasos {herramientaSeleccionada.steps} de la operación</p>
+                </>
+              ) : (
+                <h5 style={{fontFamily: 'Verdana, sans-serif'}}>La herramienta que has buscado no existe</h5>
               )}
             </Modal.Body>
             <Modal.Footer>
