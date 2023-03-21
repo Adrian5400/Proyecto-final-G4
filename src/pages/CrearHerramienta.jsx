@@ -64,6 +64,8 @@ function CrearHerramienta() {
    
     
     return (
+   
+      
       <Modal sx={{ width: {xs: '100%', md: '27%'} , marginTop:{xs: '8em', md: '3.5em'}}} open={open} onClose={handleClose}>
          
          <Paper sx={{ maxHeight: {xs: '60vh', md: '80vh'}, overflow: 'auto', mx: 2, mt: 2 }}>
@@ -87,6 +89,7 @@ function CrearHerramienta() {
             </TableContainer>
           </Paper>
       </Modal>
+
     );
   };
 
