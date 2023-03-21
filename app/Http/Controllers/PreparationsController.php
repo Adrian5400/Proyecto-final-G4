@@ -11,7 +11,6 @@ class PreparationsController extends Controller
     {
         $preparations = Preparation::select('id', 'titulo', 'desc')->get();
 
-        // Map each Herramienta object to a new object that includes the image URL
         $data = $preparations->map(function ($preparation) {
             return [
                 'id' => $preparation->id,

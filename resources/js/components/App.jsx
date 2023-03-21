@@ -3,7 +3,7 @@ import React from 'react';
 const App = () => {
     return (
         <div>
-            <h1>Si esto funciona descocha el champan</h1>
+            <h1>No deberias estar entrando aqui, esto es el servidor.</h1>
         </div>
     )
 }
