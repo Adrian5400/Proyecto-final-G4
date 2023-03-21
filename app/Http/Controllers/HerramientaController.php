@@ -42,13 +42,22 @@ class HerramientaController extends Controller
     public function store(Request $request)
     {
         $herramienta = new Herramienta;
-        $herramienta->nombre = $request->nombre;
-        $herramienta->desc = $request->desc;
-        $fileName = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public', $fileName);
-        $herramienta->image = $fileName;
-        $herramienta->steps = $request->steps;
-        $herramienta->save();
+    $herramienta->nombre = $request->nombre;
+    $herramienta->desc = $request->desc;
+    $file = $request->file('image');
+    
+    
+    if ($file->getClientOriginalExtension() === 'fbx') {
+        $fbxContent = file_get_contents($file->getRealPath());
+        $base64 = base64_encode($fbxContent);
+        $herramienta->modelo = $base64;
+    }
+
+    $fileName = $file->getClientOriginalName();
+    $file->storeAs('public', $fileName);
+    $herramienta->image = $fileName;
+    $herramienta->steps = $request->steps;
+    $herramienta->save();
         
     }
 
