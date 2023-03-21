@@ -97,6 +97,16 @@ function CrearHerramienta() {
     const regexPasos = /^(\d+)(,\d+)*$/;
 
     const extension = herramienta.imagen.split('.').pop().toLowerCase();
+
+    const pasosArray = herramienta.pasos.split(',');
+    let pasosvalidos = true;
+    for (let i = 0; i < pasosArray.length; i++) {
+      const paso = parseInt(pasosArray[i]);
+      if (paso < 1 || paso > 17) {
+        pasosvalidos = false;
+      }
+    }
+
     if (extension!=="jpg" && extension!=="fbx") {
       setAlerta("Formato de imagen incorrecto. Se espera un .jpg o .fbx");
       setSeverity('error');
@@ -107,11 +117,11 @@ function CrearHerramienta() {
       setSeverity('error');
       document.getElementById('alerta').style.display = 'block';
 
-    }else if(herramienta.pasos <1 || herramienta.pasos >17){
-      setAlerta("Los pasos van de 1 a 17");
+    }else if(pasosvalidos==false){
+      setAlerta("Los pasos deben estar entre 1 y 17.");
       setSeverity('error');
       document.getElementById('alerta').style.display = 'block';
-    }else {
+    } else {
       document.getElementById('alerta').style.display = 'block';
       setSeverity('success');
       setAlerta("Se ha creado la herramienta con éxito");

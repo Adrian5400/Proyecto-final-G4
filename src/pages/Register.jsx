@@ -42,17 +42,25 @@ function goHome() {
   const compararPasswords = () => {
     return state.password == state.confirmPassword;
   };
+
+  const validarPassword = () => {
+    const regex = /^(?=.*[A-Z]).{6,}$/;
+    if (!regex.test(state.password)) {
+      return false;
+    }
+    return true;
+  };
   
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log('Email:', state.email);
-    // console.log('Password:', state.password);
-    // console.log('Usuario:', state.usuario);
-    // console.log('Password:', state.confirmPassword);
+    
 
     if (!compararPasswords()) { 
         setError('¡No coinciden las contraseñas!');
+        document.getElementById('error').style.display = 'block';
+    }else if(!validarPassword()){
+        setError('La contraseña debe tener al menos 6 caracteres y una letra mayúscula.');
         document.getElementById('error').style.display = 'block';
     }else{
       sendData();
