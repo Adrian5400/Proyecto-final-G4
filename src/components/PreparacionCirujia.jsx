@@ -166,7 +166,7 @@ for (let i = 1; i <= 20; i++) {
 
   return (
 <div>
-    <Box sx={{ display: 'flex', alignItems: 'flex-start', width: '100%', marginTop: '2em', height: '75vh', overflow: 'scroll', paddingLeft: '5em' }}>
+  <Box sx={{ display: 'flex', alignItems: 'flex-start', width: '100%', marginTop: '2em', height: '75vh', overflowY: 'scroll', paddingLeft: '5em' }}>
       <Box sx={{ width: '100%', mr: 2 }}>
         <Stepper activeStep={pasoActual} orientation="vertical">
           {pasos.map((label, index) => (
